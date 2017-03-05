@@ -106,14 +106,19 @@
 
     <app-yosanmodal>
       <div class="app-modal-header">
-        header
+        <div class="radio">
+          <label><input type="radio" name="radio" value="radio1"> 実績</label>
+          <label><input type="radio" name="radio" value="radioYotei"> 予定</label>
+          <label><input type="radio" name="radio" value="radio2"> 有給</label>
+          <label><input type="radio" name="radio" value="radio3"> 交通費</label>
+          <label><input type="radio" name="radio" value="radio4"> その他</label>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon" >タイトル</span>
+          <input type="text" class="form-control" aria-describedby="basic-addon1">
+        </div>
       </div>
       <div class="app-modal-body">
-        Whatever content you like, form fields, anything
-
-
-
-
         <div class="input-group" id="naiyou_id">
           <span class="input-group-addon">  内容  </span>
           <textarea class="form-control" rows="5" id="comment"></textarea>
@@ -180,99 +185,4 @@
     </app-yosanmodal>
 
 
-
-    <!--&lt;!&ndash;-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; 2.モーダルの配置 -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
-    <!--<div class="modal fade" id="modal-example" tabindex="-1">-->
-      <!--<div class="modal-dialog">-->
-        <!--&lt;!&ndash; 3.モーダルのコンテンツ &ndash;&gt;-->
-        <!--<div class="modal-content">-->
-          <!--&lt;!&ndash; 4.モーダルのヘッダ &ndash;&gt;-->
-          <!--<div class="modal-header">-->
-            <!--<div class="radio">-->
-              <!--<label><input type="radio" name="radio" id="radio1" value="radio1"> 実績</label>-->
-              <!--<label><input type="radio" name="radio" id="radioYotei" value="radioYotei"> 予定</label>-->
-              <!--<label><input type="radio" name="radio" id="radio2" value="radio2"> 有給</label>-->
-              <!--<label><input type="radio" name="radio" id="radio3" value="radio3"> 交通費</label>-->
-              <!--<label><input type="radio" name="radio" id="radio4" value="radio4"> その他</label>-->
-            <!--</div>-->
-            <!--<div class="input-group">-->
-              <!--<span class="input-group-addon" >タイトル</span>-->
-              <!--<input id="modaltitle" type="text" class="form-control" aria-describedby="basic-addon1">-->
-            <!--</div>-->
-
-          <!--</div>-->
-          <!--&lt;!&ndash; 5.モーダルのボディ &ndash;&gt;-->
-          <!--<div class="modal-body">-->
-
-            <!--<div class="input-group" id="naiyou_id">-->
-      <!--<span class="input-group-addon">  内容  </span>-->
-      <!--<textarea class="form-control" rows="5" id="comment"></textarea>-->
-    <!--</div>-->
-
-
-
-    <!--<div class="input-group">-->
-      <!--<span class="input-group-addon">日付</span>-->
-      <!--<input type="text" class="form-control bsDate" id="#mydate">-->
-    <!--</div>-->
-
-    <!--<div class="input-group" id="time_start">-->
-      <!--<span class="input-group-addon" >開始</span>-->
-      <!--<span class="input-group-addon" id="downStartHour"><i class="glyphicon glyphicon-fast-backward"></i></span>-->
-      <!--<span class="input-group-addon" id="downStartMinutes"><i class="glyphicon glyphicon-step-backward"></i></span>-->
-      <!--<input type="text" id="time_startText" class="form-control" autocomplete="on" list="titleList" value="9:00">-->
-      <!--<span class="input-group-addon" id="upStartMinutes"><i class="glyphicon glyphicon-step-forward"></i></span>-->
-      <!--<span class="input-group-addon" id="upStartHour"><i class="glyphicon glyphicon-fast-forward"></i></span>-->
-    <!--</div>-->
-
-    <!--<div class="input-group" id="time_end">-->
-      <!--<span class="input-group-addon" >終了</span>-->
-      <!--<span class="input-group-addon" id="downEndHour"><i class="glyphicon glyphicon-fast-backward"></i></span>-->
-      <!--<span class="input-group-addon" id="downEndMinutes"><i class="glyphicon glyphicon-step-backward"></i></span>-->
-      <!--<input type="text" id="time_endText" class="form-control" autocomplete="on" list="titleList" value="17:00">-->
-      <!--<span class="input-group-addon" id="upEndMinutes"><i class="glyphicon glyphicon-step-forward"></i></span>-->
-      <!--<span class="input-group-addon" id="upEndHour"><i class="glyphicon glyphicon-fast-forward"></i></span>-->
-    <!--</div>-->
-
-
-    <!--<div class="input-group" id="kyuukeibox">-->
-      <!--<span class="input-group-addon" >休憩</span>-->
-      <!--<input type="text" class="form-control" aria-describedby="basic-addon1">-->
-    <!--</div>-->
-
-    <!--<div class="input-group dispnone" id="norimonoibox">-->
-      <!--<span class="input-group-addon" >乗物</span>-->
-      <!--<input type="text" class="form-control" aria-describedby="basic-addon1">-->
-    <!--</div>-->
-
-    <!--<div class="input-group dispnone" id="keirobox">-->
-      <!--<span class="input-group-addon" >経路</span>-->
-      <!--<input type="text" class="form-control" aria-describedby="basic-addon1">-->
-      <!--<span class="input-group-addon" >〜</span>-->
-      <!--<input type="text" class="form-control" aria-describedby="basic-addon1">-->
-      <!--<span class="input-group-addon" >〜</span>-->
-      <!--<input type="text" class="form-control" aria-describedby="basic-addon1">-->
-    <!--</div>-->
-
-
-
-    <!--<div class="input-group" id="kingaku_id">-->
-      <!--<span class="input-group-addon" id="basic-addon1">金額</span>-->
-      <!--<input type="text" class="form-control" aria-describedby="basic-addon1">-->
-    <!--</div>-->
-
-
-
-    <!--</div>-->
-
-          <!--&lt;!&ndash; 6.モーダルのフッタ &ndash;&gt;-->
-          <!--<div class="modal-footer">-->
-            <!--<button type="button" class="btn btn-default ">承認</button>-->
-            <!--<button type="button" class="btn btn-default">削除</button>-->
-            <!--<button type="button" class="btn btn-default" id="modalout" data-dismiss="modal">閉じる</button>-->
-            <!--<button type="button" class="btn btn-primary" id="pulslistPopup">保存</button>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
 
