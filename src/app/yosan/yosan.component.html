@@ -32,18 +32,10 @@
                 <br /><br />
                 <span class="bold">再読み込み情報</span>
 
-                <div class="dropdown">
-                  <button id="userListTitle" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">ユーザー<span class="caret"></span></button>
-                  <ul class='dropdown-menu' role='menu'>
-                    <li role='presentation' ><a href='javascript:void(0);' class='userList'>中村倫</a></li>
-                    <li role='presentation'><a href='javascript:void(0);' class='userList'>國島惇</a></li>
-                    <li role='presentation'><a href='javascript:void(0);' class='userList'>庄子侑希</a></li>
-                  </ul>
-                </div>
-
                 <div class='input-group'>
                   <span class='input-group-addon'>日付</span>
                   <input id='yearMonthStart' type='text' class='form-control bsDateMonth'>
+                  <!--<ng2-datepicker [options]="options" [(ngModel)]="date"></ng2-datepicker>-->
                   <span class='input-group-addon'>〜</span>
                   <input id='yearMonthEnd' type='text' class='form-control bsDateMonth'>
                 </div>
@@ -84,7 +76,11 @@
       </div>
 
       <div class="tab-pane" [class.active]="tabFlg2" id="about">
-        <img src="img/calenderImg.png" id="calenderImg_id">
+        <!--カレンダー-->
+        <!--<img src="img/calenderImg.png" id="calenderImg_id">-->
+
+
+
       </div>
 
       <div class="tab-pane" [class.active]="tabFlg3" id="all">
@@ -183,9 +179,10 @@
 
 
 
+    <hr />
+    <ng2-datepicker [options]="options" [(ngModel)]="date"></ng2-datepicker>
+    <button (click)="datePop()">pop</button>
 
 
-
-
-
-
+    <!--<app-my-component></app-my-component>-->
+    <!--<angular2-fullcalendar [options]="calendarOptions"></angular2-fullcalendar>-->

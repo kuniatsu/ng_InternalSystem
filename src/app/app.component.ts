@@ -8,7 +8,7 @@ import {YosanmodalComponent} from "./yosanmodal/yosanmodal.component";
 })
 export class AppComponent {
   title = 'app works!';
-  value = 2;
+  value = 1;
 
   changePage(event,num:number){
     this.title = 'masao';

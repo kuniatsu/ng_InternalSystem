@@ -6,17 +6,23 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { YosanComponent } from './yosan/yosan.component';
 import { YosanmodalComponent } from './yosanmodal/yosanmodal.component';
+import {DatePickerModule} from "./ng2-datepicker/ng2-datepicker.module";
+import {CalendarComponent} from "ap-angular2-fullcalendar";
+
 
 @NgModule({
   declarations: [
     AppComponent,
     YosanComponent,
-    YosanmodalComponent
+    YosanmodalComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    DatePickerModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {YosanmodalComponent} from "../yosanmodal/yosanmodal.component";
+import { DateModel, DatePickerOptions } from '../ng2-datepicker/ng2-datepicker.component';
 
 @Component({
   selector: 'app-yosan',
@@ -13,12 +14,23 @@ export class YosanComponent implements OnInit {
   tabFlg3=false;
   filterpara="none";
 
-  constructor() { }
+  date: DateModel;
+  date2: DateModel;
+  options: DatePickerOptions;
+
+  constructor() {
+    this.options = new DatePickerOptions();
+  }
+
   @ViewChild(YosanmodalComponent)
   public readonly yosanmodal: YosanmodalComponent;
 
   ngOnInit() {
   }
+
+  datePop(){
+  }
+
 
 
   dispFilterPara(){

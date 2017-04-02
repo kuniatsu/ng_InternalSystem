@@ -1,4 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
+// import {DatePickerOptions, DateModel} from "ng2-datepicker";
 
 @Component({
   selector: 'app-yosanmodal',
@@ -6,9 +7,13 @@ import {Component, OnInit, ViewChild} from '@angular/core';
   styleUrls: ['./yosanmodal.component.css']
 })
 export class YosanmodalComponent implements OnInit {
-  constructor() { }
+
+  constructor() {
+  }
+
   ngOnInit() {
   }
+
   public visible = false;
   private visibleAnimate = false;
 
