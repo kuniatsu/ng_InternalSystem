@@ -2,10 +2,8 @@
   <div class="datepicker-input-container">
 
     <div class='input-group'>
-      <span class='input-group-addon'>日付</span>
+      <span class='input-group-addon'>{{name}} </span>
       <input id='yearMonthStart' type='text' class='form-control bsDateMonth'  [(ngModel)]="date.formatted" (click)="toggle()">
-      <span class='input-group-addon'>〜</span>
-      <input id='yearMonthEnd' type='text' class='form-control bsDateMonth'  [(ngModel)]="date2.formatted"  (click)="toggle2()">
     </div>
 
   </div>

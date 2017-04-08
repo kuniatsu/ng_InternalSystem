@@ -105,6 +105,7 @@ export const CALENDAR_VALUE_ACCESSOR: any = {
 })
 export class DatePickerComponent implements ControlValueAccessor, OnInit {
   @Input() options: DatePickerOptions;
+  @Input() name: string;
   @Input() inputEvents: EventEmitter<{ type: string, data: string | DateModel }>;
   @Output() outputEvents: EventEmitter<{ type: string, data: string | DateModel }>;
 

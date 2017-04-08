@@ -1,7 +1,7 @@
     <!--メイン-->
     <ul class="nav nav-tabs" style="margin-bottom:15px;">
       <li [class.active]="tabFlg1"><a href="#home" data-toggle="tab"><i class="glyphicon glyphicon-list-alt" (click)="changeTab(1)"></i><span id="tabname"></span></a></li>
-      <li [class.active]="tabFlg2"><a href="#about" data-toggle="tab"><i class="glyphicon glyphicon-calendar" (click)="changeTab(2)"></i></a></li>
+      <li [class.active]="tabFlg2"><a data-toggle="tab"><i class="glyphicon glyphicon-calendar" (click)="changeTab(2)"></i></a></li>
       <li [class.active]="tabFlg3"><a href="#all" data-toggle="tab"><i class="glyphicon glyphicon-th-list" (click)="changeTab(3)"></i></a></li>
       <li class="navbar-right"><a data-toggle="modal" data-target="" ><i class="glyphicon glyphicon-plus" (click)="yosanmodal.show()"></i></a></li>
     </ul>
@@ -31,14 +31,8 @@
               <div class="col-sm-10">
                 <br /><br />
                 <span class="bold">再読み込み情報</span>
-
-                <div class='input-group'>
-                  <span class='input-group-addon'>日付</span>
-                  <input id='yearMonthStart' type='text' class='form-control bsDateMonth'>
-                  <!--<ng2-datepicker [options]="options" [(ngModel)]="date"></ng2-datepicker>-->
-                  <span class='input-group-addon'>〜</span>
-                  <input id='yearMonthEnd' type='text' class='form-control bsDateMonth'>
-                </div>
+                <ng2-datepicker [options]="options" [(ngModel)]="date" [name]="nameS"></ng2-datepicker>
+                <ng2-datepicker [options]="options" [(ngModel)]="date2" [name]="nameE"></ng2-datepicker>
 
                 <div class='btn-group'>
                   <button id='tabRefresh' type='button' class='btn btn-default'>再取得</button>
@@ -174,15 +168,3 @@
 
 
 
-    <hr />
-
-
-
-
-    <hr />
-    <ng2-datepicker [options]="options" [(ngModel)]="date"></ng2-datepicker>
-    <button (click)="datePop()">pop</button>
-
-
-    <!--<app-my-component></app-my-component>-->
-    <!--<angular2-fullcalendar [options]="calendarOptions"></angular2-fullcalendar>-->

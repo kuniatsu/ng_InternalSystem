@@ -32,15 +32,18 @@
         </div>
 
         <div class="mainBox col-sm-9 col-xs-12" [ngSwitch]="value">
-          <div id="mainColumn" *ngSwitchCase="'1'">
-            <!--メイン-->
-            <div class="panel panel-primary mainPageList" id="child2" (click)="changePage($event,1)"><h1>予算</h1></div>
-            <div class="panel panel-primary mainPageList" id="child3" (click)="changePage($event,2)"><h1>勤怠</h1></div>
-            <div class="panel panel-primary mainPageList" id="child4" (click)="changePage($event,3)"><h1>共通</h1></div>
-            <!--メイン-->
-          </div>
-          <div *ngSwitchCase="'2'"><app-yosan></app-yosan></div>
-          <div *ngSwitchCase="'3'">3</div>
+
+          <!--<div id="mainColumn" *ngSwitchCase="'1'">-->
+            <!--&lt;!&ndash;メイン&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="panel panel-primary mainPageList" id="child2" (click)="changePage($event,1)"><h1>予算</h1></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="panel panel-primary mainPageList" id="child3" (click)="changePage($event,2)"><h1>勤怠</h1></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="panel panel-primary mainPageList" id="child4" (click)="changePage($event,3)"><h1>共通</h1></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;メイン&ndash;&gt;-->
+          <!--</div>-->
+          <!--<div *ngSwitchCase="'2'"><app-yosan></app-yosan></div>-->
+          <!--<div *ngSwitchCase="'3'">3</div>-->
+
+          <router-outlet></router-outlet>
         </div>
       </span>
 </div>

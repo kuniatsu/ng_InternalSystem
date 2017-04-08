@@ -10,10 +10,10 @@ export class AppComponent {
   title = 'app works!';
   value = 1;
 
-  changePage(event,num:number){
-    this.title = 'masao';
-    this.value = num;
-  }
+  // changePage(event,num:number){
+  //   this.title = 'masao';
+  //   this.value = num;
+  // }
 
 
 

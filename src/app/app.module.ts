@@ -8,6 +8,8 @@ import { YosanComponent } from './yosan/yosan.component';
 import { YosanmodalComponent } from './yosanmodal/yosanmodal.component';
 import {DatePickerModule} from "./ng2-datepicker/ng2-datepicker.module";
 import {CalendarComponent} from "ap-angular2-fullcalendar";
+import { MainComponent } from './main/main.component';
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
@@ -15,13 +17,23 @@ import {CalendarComponent} from "ap-angular2-fullcalendar";
     AppComponent,
     YosanComponent,
     YosanmodalComponent,
-    CalendarComponent
+    CalendarComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    DatePickerModule
+    DatePickerModule,
+    RouterModule.forRoot([
+      {
+        path:'',
+        component:MainComponent
+      },{
+        path:'yosan',
+        component:YosanComponent
+      }
+    ])
 
   ],
   providers: [],

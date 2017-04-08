@@ -14,6 +14,9 @@ export class YosanComponent implements OnInit {
   tabFlg3=false;
   filterpara="none";
 
+  nameS = "開始日付";
+  nameE = "終了日付";
+
   date: DateModel;
   date2: DateModel;
   options: DatePickerOptions;
