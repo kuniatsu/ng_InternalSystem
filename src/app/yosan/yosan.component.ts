@@ -1,6 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {YosanmodalComponent} from "../yosanmodal/yosanmodal.component";
 import { DateModel, DatePickerOptions } from '../ng2-datepicker/ng2-datepicker.component';
+import {Kinmudata} from "./yosan.kinmudata";
+import {Request, Response, Http} from "@angular/http";
 
 @Component({
   selector: 'app-yosan',
@@ -8,6 +10,11 @@ import { DateModel, DatePickerOptions } from '../ng2-datepicker/ng2-datepicker.c
   styleUrls: ['./yosan.component.css']
 })
 export class YosanComponent implements OnInit {
+
+  constructor(private http: Http) {
+    this.options = new DatePickerOptions();
+    console.log("constractor");
+  }
 
   tabFlg1=true;
   tabFlg2=false;
@@ -20,15 +27,31 @@ export class YosanComponent implements OnInit {
   date: DateModel;
   date2: DateModel;
   options: DatePickerOptions;
+  kinmudataArray:Kinmudata[]=[];
 
-  constructor() {
-    this.options = new DatePickerOptions();
+
+  //json読み取り
+  updateStatus() {
+    console.log("updateStatus()");
+    this.http.request(new Request({
+      method: "Get",
+      url: "./kintai.json"
+    })).subscribe((res: Response) => {
+      var jsonObj = res.json();
+      for(var key in jsonObj){
+        var jsonDoc = jsonObj[key];
+        this.kinmudataArray.push(new Kinmudata(jsonDoc["date"],jsonDoc["title"],jsonDoc["value"]));
+      }
+    });
   }
+
+
 
   @ViewChild(YosanmodalComponent)
   public readonly yosanmodal: YosanmodalComponent;
 
   ngOnInit() {
+    this.updateStatus();
   }
 
   datePop(){

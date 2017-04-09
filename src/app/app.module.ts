@@ -10,6 +10,7 @@ import {DatePickerModule} from "./ng2-datepicker/ng2-datepicker.module";
 import {CalendarComponent} from "ap-angular2-fullcalendar";
 import { MainComponent } from './main/main.component';
 import {RouterModule} from "@angular/router";
+import { FilterPipe } from './yosan/filter.pipe';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {RouterModule} from "@angular/router";
     YosanComponent,
     YosanmodalComponent,
     CalendarComponent,
-    MainComponent
+    MainComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

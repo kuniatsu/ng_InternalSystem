@@ -1,8 +1,8 @@
     <!--メイン-->
     <ul class="nav nav-tabs" style="margin-bottom:15px;">
-      <li [class.active]="tabFlg1"><a href="#home" data-toggle="tab"><i class="glyphicon glyphicon-list-alt" (click)="changeTab(1)"></i><span id="tabname"></span></a></li>
+      <li [class.active]="tabFlg1"><a data-toggle="tab"><i class="glyphicon glyphicon-list-alt" (click)="changeTab(1)"></i><span id="tabname"></span></a></li>
       <li [class.active]="tabFlg2"><a data-toggle="tab"><i class="glyphicon glyphicon-calendar" (click)="changeTab(2)"></i></a></li>
-      <li [class.active]="tabFlg3"><a href="#all" data-toggle="tab"><i class="glyphicon glyphicon-th-list" (click)="changeTab(3)"></i></a></li>
+      <li [class.active]="tabFlg3"><a data-toggle="tab"><i class="glyphicon glyphicon-th-list" (click)="changeTab(3)"></i></a></li>
       <li class="navbar-right"><a data-toggle="modal" data-target="" ><i class="glyphicon glyphicon-plus" (click)="yosanmodal.show()"></i></a></li>
     </ul>
 
@@ -12,7 +12,7 @@
         <div ng-controller="ngController as ngCtrl">
           <div class="input-group">
 
-            <input type="text" id="area" class="form-control" placeholder="有休・交通費・実績" autocomplete="on" list="titleList">
+            <input type="text" id="area" [(ngModel)]="serch" class="form-control" placeholder="有休・交通費・実績" autocomplete="on" list="titleList">
             <datalist id="titleList">
               <option value="実績">
               <option value="有休">
@@ -57,12 +57,17 @@
               <td>タイトル</td>
               <td>時間・金額</td>
             </tr>
-              <tr>
-                <td class="checkBoxshow dispnone"><input type="checkbox" value=""></td>
-                <td> あああ</td>
-                <td>bbbbbb</td>
-                <td>cccc</td>
-              </tr>
+
+            <tr *ngFor="let recod of kinmudataArray|filter:serch">
+            <!--<tr *ngFor="let recod of jsonObj|filter:serch">-->
+              <td class="checkBoxshow dispnone"><input type="checkbox" value=""></td>
+              <td>{{recod.date}}</td>
+              <td>{{recod.title}}</td>
+              <td>{{recod.value}}</td>
+            </tr>
+
+
+
           </table>
           <button class="btn btn-success "><i class="glyphicon glyphicon-print"></i> 電子ファイル出力</button>
 
