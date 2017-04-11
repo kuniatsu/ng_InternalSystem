@@ -3,6 +3,7 @@ import {YosanmodalComponent} from "../yosanmodal/yosanmodal.component";
 import { DateModel, DatePickerOptions } from '../ng2-datepicker/ng2-datepicker.component';
 import {Kinmudata} from "./yosan.kinmudata";
 import {Request, Response, Http} from "@angular/http";
+import {CalendarComponent} from "ap-angular2-fullcalendar";
 
 @Component({
   selector: 'app-yosan',
@@ -29,6 +30,10 @@ export class YosanComponent implements OnInit {
   options: DatePickerOptions;
   kinmudataArray:Kinmudata[]=[];
 
+  ngOnInit() {
+    this.updateStatus();
+  }
+
 
   //json読み取り
   updateStatus() {
@@ -50,9 +55,7 @@ export class YosanComponent implements OnInit {
   @ViewChild(YosanmodalComponent)
   public readonly yosanmodal: YosanmodalComponent;
 
-  ngOnInit() {
-    this.updateStatus();
-  }
+
 
   datePop(){
   }
@@ -91,5 +94,55 @@ export class YosanComponent implements OnInit {
         break;
     }
   }
+
+
+  //下　カレンダー用に追加
+
+  @ViewChild(CalendarComponent) myCalendar: CalendarComponent;
+
+  changeCalendarView(view) {
+    this.myCalendar.fullCalendar('changeView', view);
+  }
+
+  calendarOptions:Object = {
+    height: 500,//高さを任意で指定
+    fixedWeekCount : false,
+    defaultDate: '2016-09-12',
+    editable: true,
+    eventLimit: true, // allow "more" link when too many events
+    events: [
+      {
+        title: 'All Day Event',
+        start: '2016-09-01'
+      },
+      {
+        title: 'Long Event',
+        start: '2016-09-07',
+        end: '2016-09-10'
+      },
+      {
+        id: 999,
+        title: 'Repeating Event',
+        start: '2016-09-09T16:00:00'
+      },
+      {
+        id: 999,
+        title: 'Repeating Event',
+        start: '2016-09-16T16:00:00'
+      },
+      {
+        title: 'Conference',
+        start: '2016-09-11',
+        end: '2016-09-13'
+      },
+      {
+        title: 'Click for Google',
+        url: 'http://google.com/',
+        start: '2016-09-28'
+      }
+    ]
+  };
+  //上　カレンダー用に追加
+
 
 }
