@@ -7,4 +7,20 @@ export class Kinmudata{
     private title:string,
     private value:string
   ){}
+
+  private calendarData:string;
+
+  public hyphen():any{
+    var regExp = new RegExp( '/', "g" ) ;
+    this.calendarData = this.date.replace( regExp , "-" ) ;
+    return this;
+  }
+
+  public getDate():string{
+    return this.date;
+  }
+  public getTitle():string{
+    return this.title;
+  }
+
 }

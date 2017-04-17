@@ -31,7 +31,28 @@ export class YosanComponent implements OnInit {
   kinmudataArray:Kinmudata[]=[];
 
   ngOnInit() {
-    this.updateStatus();
+    this.updateStatus();//json読み込み
+
+    // this.calendarOptions['events'].push({
+    //   'title':this.kinmudataArray[0].getTitle(),
+    //   'start':this.kinmudataArray[0].getDate()
+    // });
+
+    var aaa = this.kinmudataArray;
+    console.dir(aaa);
+
+    this.calendarOptions['events'].push(
+      {
+        title:  'aaa',
+        start: '2016-09-28'
+      }
+    );
+
+
+
+
+
+    console.dir(this.calendarOptions['events']);
   }
 
 
@@ -45,8 +66,9 @@ export class YosanComponent implements OnInit {
       var jsonObj = res.json();
       for(var key in jsonObj){
         var jsonDoc = jsonObj[key];
-        this.kinmudataArray.push(new Kinmudata(jsonDoc["date"],jsonDoc["title"],jsonDoc["value"]));
+        this.kinmudataArray.push(new Kinmudata(jsonDoc["date"],jsonDoc["title"],jsonDoc["value"]).hyphen());
       }
+      // console.dir(this.kinmudataArray);
     });
   }
 
@@ -86,6 +108,7 @@ export class YosanComponent implements OnInit {
         this.tabFlg1=false;
         this.tabFlg2=true;
         this.tabFlg3=false;
+
         break;
       case 3:
         this.tabFlg1=false;
@@ -107,7 +130,7 @@ export class YosanComponent implements OnInit {
   calendarOptions:Object = {
     height: 500,//高さを任意で指定
     fixedWeekCount : false,
-    defaultDate: '2016-09-12',
+    defaultDate: '2017-04-12',
     editable: true,
     eventLimit: true, // allow "more" link when too many events
     events: [
