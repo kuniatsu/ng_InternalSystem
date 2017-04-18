@@ -1,25 +1,27 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
+import {Http, Request, Response} from "@angular/http";
+import {DatePickerOptions} from "../ng2-datepicker/ng2-datepicker.component";
+import {DateModel} from "../ng2-datepicker-modal/ng2-datepicker.component";
+import {Kinmudata} from "../yosan/yosan.kinmudata";
 import {YosanmodalComponent} from "../yosanmodal/yosanmodal.component";
-import { DateModel, DatePickerOptions } from '../ng2-datepicker/ng2-datepicker.component';
-import {Kinmudata} from "./yosan.kinmudata";
-import {Request, Response, Http} from "@angular/http";
 import {CalendarComponent} from "ap-angular2-fullcalendar";
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-yosan',
-  templateUrl: './yosan.component.html',
-  styleUrls: ['./yosan.component.css']
+  selector: 'app-monthcalendar',
+  templateUrl: './monthcalendar.component.html',
+  styleUrls: ['./monthcalendar.component.css']
 })
-export class YosanComponent implements OnInit {
+export class MonthcalendarComponent implements OnInit {
+
 
   constructor(private http: Http,public router: Router) {
     this.options = new DatePickerOptions();
     console.log("constractor");
   }
 
-  tabFlg1=true;
-  tabFlg2=false;
+  tabFlg1=false;
+  tabFlg2=true;
   tabFlg3=false;
   filterpara="none";
 
@@ -34,10 +36,6 @@ export class YosanComponent implements OnInit {
   ngOnInit() {
     this.updateStatus();//json読み込み
 
-    // this.calendarOptions['events'].push({
-    //   'title':this.kinmudataArray[0].getTitle(),
-    //   'start':this.kinmudataArray[0].getDate()
-    // });
 
     var aaa = this.kinmudataArray;
     console.dir(aaa);
@@ -48,10 +46,6 @@ export class YosanComponent implements OnInit {
         start: '2016-09-28'
       }
     );
-
-
-
-
 
     console.dir(this.calendarOptions['events']);
   }
@@ -80,41 +74,17 @@ export class YosanComponent implements OnInit {
 
 
 
-  datePop(){
-  }
-
-
-
-  dispFilterPara(){
-    console.log("filterbutton"+this.filterpara);
-    if(this.filterpara=="none"){
-      this.filterpara = "block";
-      console.log(1);
-    }else{
-      this.filterpara = "none";
-      console.log(2);
-    }
-
-  }
-
-
   changeTab(num:number){
     switch (num){
       case 1:
-        // this.tabFlg1=true;
-        // this.tabFlg2=false;
-        // this.tabFlg3=false;
         this.router.navigate(['yosan']);
         break;
       case 2:
-        // this.tabFlg1=false;
-        // this.tabFlg2=true;
-        // this.tabFlg3=false;
-        this.router.navigate(['monthcalendar']);
-
+        this.tabFlg1=false;
+        this.tabFlg2=true;
+        this.tabFlg3=false;
 
         break;
-
       case 3:
         this.tabFlg1=false;
         this.tabFlg2=false;

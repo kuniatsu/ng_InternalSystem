@@ -11,6 +11,7 @@ import {CalendarComponent} from "ap-angular2-fullcalendar";
 import { MainComponent } from './main/main.component';
 import {RouterModule} from "@angular/router";
 import { FilterPipe } from './yosan/filter.pipe';
+import { MonthcalendarComponent } from './monthcalendar/monthcalendar.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FilterPipe } from './yosan/filter.pipe';
     YosanmodalComponent,
     CalendarComponent,
     MainComponent,
-    FilterPipe
+    FilterPipe,
+    MonthcalendarComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +36,9 @@ import { FilterPipe } from './yosan/filter.pipe';
       },{
         path:'yosan',
         component:YosanComponent
+      },{
+        path:'monthcalendar',
+        component:MonthcalendarComponent,
       }
     ])
 
