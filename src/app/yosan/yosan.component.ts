@@ -33,27 +33,6 @@ export class YosanComponent implements OnInit {
 
   ngOnInit() {
     this.updateStatus();//json読み込み
-
-    // this.calendarOptions['events'].push({
-    //   'title':this.kinmudataArray[0].getTitle(),
-    //   'start':this.kinmudataArray[0].getDate()
-    // });
-
-    var aaa = this.kinmudataArray;
-    console.dir(aaa);
-
-    this.calendarOptions['events'].push(
-      {
-        title:  'aaa',
-        start: '2016-09-28'
-      }
-    );
-
-
-
-
-
-    console.dir(this.calendarOptions['events']);
   }
 
 
@@ -80,11 +59,6 @@ export class YosanComponent implements OnInit {
 
 
 
-  datePop(){
-  }
-
-
-
   dispFilterPara(){
     console.log("filterbutton"+this.filterpara);
     if(this.filterpara=="none"){
@@ -101,76 +75,13 @@ export class YosanComponent implements OnInit {
   changeTab(num:number){
     switch (num){
       case 1:
-        // this.tabFlg1=true;
-        // this.tabFlg2=false;
-        // this.tabFlg3=false;
-        this.router.navigate(['yosan']);
         break;
       case 2:
-        // this.tabFlg1=false;
-        // this.tabFlg2=true;
-        // this.tabFlg3=false;
         this.router.navigate(['monthcalendar']);
-
-
         break;
-
       case 3:
-        this.tabFlg1=false;
-        this.tabFlg2=false;
-        this.tabFlg3=true;
         break;
     }
   }
-
-
-  //下　カレンダー用に追加
-
-  @ViewChild(CalendarComponent) myCalendar: CalendarComponent;
-
-  changeCalendarView(view) {
-    this.myCalendar.fullCalendar('changeView', view);
-  }
-
-  calendarOptions:Object = {
-    height: 500,//高さを任意で指定
-    fixedWeekCount : false,
-    defaultDate: '2017-04-12',
-    editable: true,
-    eventLimit: true, // allow "more" link when too many events
-    events: [
-      {
-        title: 'All Day Event',
-        start: '2016-09-01'
-      },
-      {
-        title: 'Long Event',
-        start: '2016-09-07',
-        end: '2016-09-10'
-      },
-      {
-        id: 999,
-        title: 'Repeating Event',
-        start: '2016-09-09T16:00:00'
-      },
-      {
-        id: 999,
-        title: 'Repeating Event',
-        start: '2016-09-16T16:00:00'
-      },
-      {
-        title: 'Conference',
-        start: '2016-09-11',
-        end: '2016-09-13'
-      },
-      {
-        title: 'Click for Google',
-        url: 'http://google.com/',
-        start: '2016-09-28'
-      }
-    ]
-  };
-  //上　カレンダー用に追加
-
 
 }

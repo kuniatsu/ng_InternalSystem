@@ -23,10 +23,6 @@ export class MonthcalendarComponent implements OnInit {
   tabFlg1=false;
   tabFlg2=true;
   tabFlg3=false;
-  filterpara="none";
-
-  nameS = "開始日付";
-  nameE = "終了日付";
 
   date: DateModel;
   date2: DateModel;
@@ -35,19 +31,6 @@ export class MonthcalendarComponent implements OnInit {
 
   ngOnInit() {
     this.updateStatus();//json読み込み
-
-
-    var aaa = this.kinmudataArray;
-    console.dir(aaa);
-
-    this.calendarOptions['events'].push(
-      {
-        title:  'aaa',
-        start: '2016-09-28'
-      }
-    );
-
-    console.dir(this.calendarOptions['events']);
   }
 
 
@@ -80,15 +63,8 @@ export class MonthcalendarComponent implements OnInit {
         this.router.navigate(['yosan']);
         break;
       case 2:
-        this.tabFlg1=false;
-        this.tabFlg2=true;
-        this.tabFlg3=false;
-
         break;
       case 3:
-        this.tabFlg1=false;
-        this.tabFlg2=false;
-        this.tabFlg3=true;
         break;
     }
   }
