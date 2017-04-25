@@ -12,6 +12,14 @@ import { MainComponent } from './main/main.component';
 import {RouterModule} from "@angular/router";
 import { FilterPipe } from './yosan/filter.pipe';
 import { MonthcalendarComponent } from './monthcalendar/monthcalendar.component';
+import { YosaneditComponent } from './yosanedit/yosanedit.component';
+import { YosanCheckComponent } from './yosan-check/yosan-check.component';
+import { YosanListComponent } from './yosan-list/yosan-list.component';
+import { MoveExpenseComponent } from './move-expense/move-expense.component';
+import { HolidayComponent } from './holiday/holiday.component';
+import { SystemInfoComponent } from './system-info/system-info.component';
+import { GroupEditComponent } from './group-edit/group-edit.component';
+import { HolidayListComponent } from './holiday-list/holiday-list.component';
 
 
 @NgModule({
@@ -22,7 +30,15 @@ import { MonthcalendarComponent } from './monthcalendar/monthcalendar.component'
     CalendarComponent,
     MainComponent,
     FilterPipe,
-    MonthcalendarComponent
+    MonthcalendarComponent,
+    YosaneditComponent,
+    YosanCheckComponent,
+    YosanListComponent,
+    MoveExpenseComponent,
+    HolidayComponent,
+    SystemInfoComponent,
+    GroupEditComponent,
+    HolidayListComponent
   ],
   imports: [
     BrowserModule,

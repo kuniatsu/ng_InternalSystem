@@ -10,11 +10,21 @@ export class Kinmudata{
 
   private calendarData:string;
 
-  public hyphen():any{
+  public changeHyphen():any{
     var regExp = new RegExp( '/', "g" ) ;
     this.calendarData = this.date.replace( regExp , "-" ) ;
     return this;
   }
+
+  public changeSlash():any{
+    var regExp = new RegExp( '-', "g" ) ;
+    this.calendarData = this.date.replace( regExp , "/" ) ;
+    return this;
+  }
+
+
+
+
 
   public getDate():string{
     return this.date;

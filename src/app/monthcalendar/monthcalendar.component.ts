@@ -28,9 +28,60 @@ export class MonthcalendarComponent implements OnInit {
   date2: DateModel;
   options: DatePickerOptions;
   kinmudataArray:Kinmudata[]=[];
+  calendarOptions:Object;
+
+
 
   ngOnInit() {
     this.updateStatus();//json読み込み
+    // this.calendarOptions.events = this.kinmudataArray;
+
+    this.calendarOptions = {
+      height: 500,//高さを任意で指定
+      fixedWeekCount : false,
+      defaultDate: '2017-04-12',
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      events: [
+        {
+          title: 'All Day Event',
+          start: '2017-04-01'
+        },
+        {
+          title: 'Long Event',
+          start: '2017-04-07',
+          end: '2017-04-10'
+        },
+        {
+          id: 999,
+          title: 'Repeating Event',
+          start: '2017-04-09T16:00:00'
+        },
+        {
+          id: 999,
+          title: 'Repeating Event',
+          start: '2017-04-16T16:00:00'
+        },
+        {
+          title: 'Conference',
+          start: '2017-04-11',
+          end: '2017-04-13'
+        },
+        {
+          title: 'Click for Google',
+          url: 'http://google.com/',
+          start: '2017-03-28'
+        }//,this.kinmudataArray[0].
+      ]
+    };
+
+
+    console.log("kinmudataArray");
+    console.dir(this.kinmudataArray);
+    console.log("calendarOptions");
+    console.dir(this.calendarOptions);
+    // console.dir(this.calendarOptions.events);
+
   }
 
 
@@ -44,7 +95,7 @@ export class MonthcalendarComponent implements OnInit {
       var jsonObj = res.json();
       for(var key in jsonObj){
         var jsonDoc = jsonObj[key];
-        this.kinmudataArray.push(new Kinmudata(jsonDoc["date"],jsonDoc["title"],jsonDoc["value"]).hyphen());
+        this.kinmudataArray.push(new Kinmudata(jsonDoc["date"],jsonDoc["title"],jsonDoc["value"]).changeHyphen());
       }
       // console.dir(this.kinmudataArray);
     });
@@ -77,46 +128,5 @@ export class MonthcalendarComponent implements OnInit {
   changeCalendarView(view) {
     this.myCalendar.fullCalendar('changeView', view);
   }
-
-  calendarOptions:Object = {
-    height: 500,//高さを任意で指定
-    fixedWeekCount : false,
-    defaultDate: '2017-04-12',
-    editable: true,
-    eventLimit: true, // allow "more" link when too many events
-    events: [
-      {
-        title: 'All Day Event',
-        start: '2016-09-01'
-      },
-      {
-        title: 'Long Event',
-        start: '2016-09-07',
-        end: '2016-09-10'
-      },
-      {
-        id: 999,
-        title: 'Repeating Event',
-        start: '2016-09-09T16:00:00'
-      },
-      {
-        id: 999,
-        title: 'Repeating Event',
-        start: '2016-09-16T16:00:00'
-      },
-      {
-        title: 'Conference',
-        start: '2016-09-11',
-        end: '2016-09-13'
-      },
-      {
-        title: 'Click for Google',
-        url: 'http://google.com/',
-        start: '2016-09-28'
-      }
-    ]
-  };
-  //上　カレンダー用に追加
-
 
 }
