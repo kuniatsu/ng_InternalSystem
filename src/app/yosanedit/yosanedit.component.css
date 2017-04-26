@@ -1,0 +1,65 @@
+/*↓cssの記述はこちらへ↓*/
+#btn_add{
+  margin:10px 5px;
+}
+#btn_del{
+  margin:10px 5px;
+}
+#fotter{
+  margin-top:100px;
+}
+.fixwd_1{
+  font-size: 11.5px;
+  color: red;
+}
+#panel1{
+  margin: 0px 20px 20px;
+}
+#reg_gr{
+  margin:65px 0px 0px 45px;
+}
+#sign_tbl{
+  margin-left:40px;
+  margin-bottom: 20px;
+}
+.sign_cel1{
+  font-size: 12px;
+  width: 70px;
+  height: 25px;
+}
+.sign_cell2{
+  font-style: oblique;
+}
+.signdate_cell{
+  width: 120px;
+}
+#coment{
+  margin-top:20px;
+  padding: 10px;
+}
+#shinsei_status{
+  margin-left: 20px;
+}
+.status_cel1{
+  font-size: 12px;
+  width: 120px;
+  height: 25px;
+  text-align: center;
+  background-color:bisque;
+}
+#signdate_tbl{
+  margin-left:40px;
+  margin-bottom: 20px;
+}
+#exam_coment{
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+a[aria-expanded="false"]:after {
+  /*content: url("img/icon_plus_open.png");*/
+}
+
+a[aria-expanded="true"]:after {
+  /*content: url("img/icon_minus_close1.png");*/
+}
+/*↑cssの記述はこちらへ↑*/
