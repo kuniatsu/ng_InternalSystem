@@ -22,10 +22,6 @@ export class Kinmudata{
     return this;
   }
 
-
-
-
-
   public getDate():string{
     return this.date;
   }
