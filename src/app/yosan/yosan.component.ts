@@ -43,12 +43,14 @@ export class YosanComponent implements OnInit {
       method: "Get",
       url: "./kintai.json"
     })).subscribe((res: Response) => {
+      console.log("json読み出し開始");
       var jsonObj = res.json();
       for(var key in jsonObj){
         var jsonDoc = jsonObj[key];
+        console.log(jsonDoc["date"]+" : "+jsonDoc["title"]+" : "+jsonDoc["value"]);
         this.kinmudataArray.push(new Kinmudata(jsonDoc["date"],jsonDoc["title"],jsonDoc["value"]).changeHyphen());
       }
-      // console.dir(this.kinmudataArray);
+      console.log("json読み出し終了");
     });
   }
 
