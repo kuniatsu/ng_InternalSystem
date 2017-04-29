@@ -55,7 +55,26 @@ import { HolidayListComponent } from './holiday-list/holiday-list.component';
       },{
         path:'monthcalendar',
         component:MonthcalendarComponent,
+      },{
+        path:'GroupEditComponent',
+        component:GroupEditComponent,
+      },{
+        path:'HolidayComponent',
+        component:HolidayComponent,
+      },{
+        path:'HolidayListComponent',
+        component:HolidayListComponent,
+      },{
+        path:'MoveExpenseComponent',
+        component:MoveExpenseComponent,
+      },{
+        path:'SystemInfoComponent',
+        component:SystemInfoComponent,
       }
+
+
+
+
     ])
 
   ],

@@ -47,8 +47,11 @@ export class YosanComponent implements OnInit {
       var jsonObj = res.json();
       for(var key in jsonObj){
         var jsonDoc = jsonObj[key];
-        console.log(jsonDoc["date"]+" : "+jsonDoc["title"]+" : "+jsonDoc["value"]);
-        this.kinmudataArray.push(new Kinmudata(jsonDoc["date"],jsonDoc["title"],jsonDoc["value"]).changeHyphen());
+        // console.log(jsonDoc["date"]+" : "+jsonDoc["title"]+" : "+jsonDoc["value"]);
+        // this.kinmudataArray.push(new Kinmudata(jsonDoc["date"],jsonDoc["title"],jsonDoc["value"]).changeHyphen());
+        console.log(jsonDoc["start"]+" : "+jsonDoc["title"]+" : "+jsonDoc["value"]);
+        this.kinmudataArray.push(new Kinmudata(jsonDoc["start"],jsonDoc["title"],jsonDoc["value"]).changeHyphen());
+
       }
       console.log("json読み出し終了");
     });

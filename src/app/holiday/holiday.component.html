@@ -1,3 +1,44 @@
-<p>
-  holiday works!
-</p>
+<!--特休公休設定画面-->
+<!--確認済み-->
+
+
+<!-- ↓htmlはこちらへ↓ -->
+<div class="input-group">
+  <table class="table table-bordered table-condensed" id="tbl_holiday">
+    <tr class="active">
+      <th class="text-center">設定日</th>
+      <th class="text-center">祝日設定</th>
+      <th class="text-center">祝日名称</th>
+      <th class="text-center">設定／削除</th>
+    </tr>
+    <tr>
+      <td><input style="width:150px;" type="text" class="form-control bsDate" id="usage1input3 #mydate"></td>
+      <td><select style="width:150px" class="form-control" id="usage1select3">
+        <option>特休</option>
+        <option>公休</option>
+        <option>年休取得推奨日</option>
+      </select></td>
+      <td><input style="width:250px;" type="text" class="form-control" id="usage1input3" placeholder="全角15文字(半角30文字)以内"></td>
+      <td><span class="input-group-btn">
+                                   <button type="button" class="btn btn-primary">設定</button>
+                                   </span>
+        <span class="input-group-btn">
+                                   <button type="button" class="btn btn-danger" onClick="disp(this)">削除</button>
+                                   </span></td>
+    </tr>
+  </table>
+</div>
+<div id="btn_add" style="float:left;">
+  <button type="button" class="btn btn-success btn-xs" onclick="add_row();"><span class="glyphicon glyphicon-plus"></span>登録欄追加</button>
+</div>
+<div id="btn_del">
+  <button id="del" type="button" class="btn btn-warning btn-xs" onclick="del_row();" disabled><span class="glyphicon glyphicon-minus"></span>登録欄削除</button>
+</div>
+<div style="margin-top:40px;">
+  <a href="PCM002_main.html"><button type="button" class="btn btn-primary">メインメニュー画面へ</button></a>
+</div>
+<!-- フッター -->
+<div class="col-sm-8 col-md-offset-2" id="fotter"> &copy; 2012-<script>koshin();</script>
+  <a href="http://www.cevol.jp/index.html">CEVOL</a> All Rights Reserved.
+</div>
+<!-- ↑htmlはこちらへ↑ -->

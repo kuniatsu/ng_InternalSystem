@@ -1,5 +1,20 @@
-<a routerLink=""><div class="panel panel-primary mainPageList" id="child2" ><h1>予算</h1></div></a>
-<a routerLink="yosan"><div class="panel panel-primary mainPageList" id="child3" ><h1>勤怠</h1></div></a>
-<a routerLink=""><div class="panel panel-primary mainPageList" id="child4" ><h1>共通</h1></div></a>
+<a routerLink=""><div class="panel panel-primary mainPageList" id="child2" (click)="openCloseContent(0)"><h1>予算</h1></div></a>
+<span *ngIf="yosanFlg"></span>
 
+
+<div class="panel panel-primary mainPageList" id="child3" (click)="openCloseContent(1)"><h1>勤怠</h1></div>
+<span *ngIf="kintaiFlg">
+  <a routerLink="yosan"><div class="panel panel-primary mainPageList"><h1>勤怠一覧</h1></div></a>
+  <a routerLink="monthcalendar"><div class="panel panel-primary mainPageList"><h1>勤怠カレンダー</h1></div></a>
+  <a routerLink="MoveExpenseComponent"><div class="panel panel-primary mainPageList"><h1>交通費出張旅費精算</h1></div></a>
+</span>
+
+
+<a routerLink=""><div class="panel panel-primary mainPageList" id="child4" (click)="openCloseContent(2)"><h1>共通</h1></div></a>
+<span *ngIf="systemFlg">
+    <a routerLink="GroupEditComponent"><div class="panel panel-primary mainPageList"><h1>グループ名称追加変更削除</h1></div></a>
+    <a routerLink="HolidayComponent"><div class="panel panel-primary mainPageList"><h1>特休公休設定画面</h1></div></a>
+    <a routerLink="HolidayListComponent"><div class="panel panel-primary mainPageList"><h1>有休申請</h1></div></a>
+    <a routerLink="SystemInfoComponent"><div class="panel panel-primary mainPageList"><h1>システム管理画面</h1></div></a>
+</span>
 

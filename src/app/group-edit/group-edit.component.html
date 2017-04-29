@@ -1,3 +1,70 @@
-<p>
-  group-edit works!
-</p>
+<!--グループ名称追加変更削除-->
+<!--表示テスト済み-->
+
+
+<!-- ↓htmlはこちらへ↓ -->
+<div  class="input-group" style="width:570px;">
+  <table class="table table-bordered table-condensed" id="tbl_division">
+    <tr class="active">
+      <th class="text-center">事業部</th>
+      <th class="text-center">適用開始月</th>
+      <th class="text-center">適用終了月</th>
+      <th class="text-center">設定／削除</th>
+    </tr>
+    <tr>
+      <td><input style="width:225px;" type="text" class="form-control input-sm" placeholder="全角30文字(半角60文字)以内"></td>
+      <td><input style="width:100px;" type="text" class="form-control bsDate input-sm" ></td>
+      <td><input style="width:100px;" type="text" class="form-control bsDate input-sm" ></td>
+      <td><span class="input-group-btn ">
+                              <button type="button" class="btn btn-primary btn-sm">設定</button></span>
+        <span class="input-group-btn">
+                                  <button type="button" class="btn btn-danger btn-sm" onClick="disp(this)">削除</button>
+                              </span>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="btn_add1" style="float:left;">
+  <button type="button" class="btn btn-success btn-xs" onclick="add_row_divs();"><span class="glyphicon glyphicon-plus"></span>登録欄追加</button>
+</div>
+<div id="btn_del1" style="margin-bottom:30px;">
+  <button id="del1" type="button" class="btn btn-warning btn-xs" onclick="del_row_divs();" disabled><span class="glyphicon glyphicon-minus"></span>登録欄削除</button>
+</div>
+<div class="input-group" style="width:580px;">
+  <table class="table table-bordered table-condensed" id="tbl_group">
+    <tr class="active">
+      <th class="text-center">グループ</th>
+      <th class="text-center">適用開始月</th>
+      <th class="text-center">適用終了月</th>
+      <th class="text-center">設定／削除</th>
+    </tr>
+    <tr>
+      <td><input style="width:225px;" type="text" class="form-control input-sm" placeholder="全角30文字(半角60文字)以内"></td>
+      <td><input style="width:100px;" type="text" class="form-control bsDate input-sm" ></td>
+      <td><input style="width:100px;" type="text" class="form-control bsDate input-sm" ></td>
+      <td><span class="input-group-btn ">
+                              <button type="button" class="btn btn-primary btn-sm">設定</button></span>
+        <span class="input-group-btn">
+                                  <button type="button" class="btn btn-danger btn-sm" onClick="disp(this)">削除</button>
+                              </span>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="btn_add2" style="float:left;">
+  <button type="button" class="btn btn-success btn-xs" onclick="add_row_gr();"><span class="glyphicon glyphicon-plus"></span>登録欄追加</button>
+</div>
+<div id="btn_del2">
+  <button id="del2" type="button" class="btn btn-warning btn-xs" onclick="del_row_gr();" disabled><span class="glyphicon glyphicon-minus"></span>登録欄削除</button>
+</div>
+
+<div style="margin-top:40px;">
+  <a href="PCM000_systemadministration.html"><button type="button" class="btn btn-primary">システム管理画面へ</button></a>
+  <a href="PCM002_main.html"><button type="button" class="btn btn-primary">メインメニュー画面へ</button></a>
+</div>
+<!-- フッター -->
+<div class="col-sm-8 col-md-offset-2" id="fotter"> &copy; 2012-<script>koshin();</script>
+  <a href="http://www.cevol.jp/index.html">CEVOL</a> All Rights Reserved.
+</div>
+<!-- ↑htmlはこちらへ↑ -->
+

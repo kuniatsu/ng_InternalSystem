@@ -50,7 +50,7 @@ export class MonthcalendarComponent implements OnInit {
     var returnArray = [];
     this.http.request(new Request({
       method: "Get",
-      url: "./kintai2.json"
+      url: "./kintai.json"
     })).subscribe((res: Response) => {
       var jsonObj = res.json();
       for(var key in jsonObj){

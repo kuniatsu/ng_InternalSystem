@@ -1,3 +1,113 @@
-<p>
-  system-info works!
-</p>
+<!--システム管理画面-->
+
+
+<!-- ↓htmlはこちらへ↓ -->
+<!-- ページネーションエリア -->
+<ul class="pagination pagination-sm">
+  <li class="disabled"><a href="#" onclick="page_draw(0,3)">«</a></li>
+  <li class="active"><a href="#" onclick="page_draw(0,2)">1</a></li>
+  <li class="disabled"><a href="#" onclick="page_draw(1,2)">2</a></li>
+  <li class="disabled"><a href="#" onclick="page_draw(2,2)">3</a></li>
+  <li class="disabled"><a href="#" onclick="page_draw(3,2)">4</a></li>
+  <li class="disabled"><a href="#" onclick="page_draw(4,2)">5</a></li>
+  <li class="disabled"><a href="#" onclick="page_draw(0,4)">»</a></li>
+</ul>
+<!-- ユーザー情報登録項目 -->
+<div class="input-group">
+  <table class="table table-bordered table-condensed" id="tbl_personal" >
+    <tr class="active">
+      <th class="text-center">パスワード</th>
+      <th class="text-center">ユーザーID</th>
+      <th class="text-center">社員名</th>
+      <th class="text-center">所属事業部</th>
+      <th class="text-center">所属グループ</th>
+      <th class="text-center">単価</th>
+      <th class="text-center">残業代</th>
+      <th class="text-center">作業基準時間</th>
+      <th class="text-center">役職</th>
+      <th class="text-center">適用開始月</th>
+      <th class="text-center">適用終了月</th>
+      <th class="text-center">設定／削除</th>
+    </tr>
+    <tr>
+      <td><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#idpwModal">パスワード</button></td>
+      <td><input style="width:110px;" type="text" class="form-control input-xs" placeholder="10桁以内"></td>
+      <td><input style="width:170px;" type="text" class="form-control input-xs" placeholder="全角25文字(半角50文字)以内"></td>
+      <td><select style="width: 120px" class="form-control input-xs">
+        <option>--</option>
+        <option>管理本部</option>
+        <option>東京事業部</option>
+        <option>茨城事業部</option>
+      </select></td>
+      <td><select style="width: 150px" class="form-control input-xs">
+        <option>--</option>
+        <option>管理本部付き</option>
+        <option>アウトソーシング</option>
+        <option>第1グループ</option>
+        <option>第2グループ</option>
+        <option>第3グループ</option>
+      </select></td>
+      <td><input style="width:100px;" type="text" class="form-control input-xs" placeholder="7桁以内"></td>
+      <td><input style="width:100px;" type="text" class="form-control input-xs" placeholder="7桁以内"></td>
+      <td><input style="width:100px;" type="text" class="form-control input-xs" placeholder="例）7：40"></td>
+      <td><select style="width: 100px" class="form-control input-xs" id="usage1select2">
+        <option></option>
+        <option>役員</option>
+        <option>管理職</option>
+        <option>総務</option>
+        <option>一般</option>
+      </select>
+      </td>
+      <td><input style="width:100px;" type="text" class="form-control input-xs bsDate" ></td>
+      <td><input style="width:100px;" type="text" class="form-control input-xs bsDate" ></td>
+      <td><span class="input-group-btn">
+                                   <button type="button" class="btn btn-primary btn-sm">設定</button>
+                                   </span>
+        <span class="input-group-btn">
+                                   <button type="button" class="btn btn-danger btn-sm" onClick="disp(this)">削除</button>
+                                   </span></td>
+    </tr>
+  </table>
+</div>
+<div id="btn_add" style="float:left;">
+  <button type="button" class="btn btn-success btn-xs" onclick="add_row_p2();"><span class="glyphicon glyphicon-plus"></span>登録欄追加</button>
+</div>
+<div id="btn_del">
+  <button id="del_p" type="button" class="btn btn-warning btn-xs" onclick="del();" disabled><span class="glyphicon glyphicon-minus"></span>登録欄削除</button>
+</div>
+<div style="margin-top:40px;">
+  <a href="PCM004_grnameaddition.html"><button type="button" class="btn btn-primary">Gr名称追加・変更・削除画面へ</button></a>
+  <a href="PCM002_main.html"><button type="button" class="btn btn-primary">メインメニュー画面へ</button></a>
+</div>
+<!-- モーダル表示(ユーザーID/PW) -->
+<div class="modal fade" id="idpwModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+        <!-- 登録後表示メッセージ -->
+        <div id="msg" class="alert alert-info" role="alert" style="margin-top:20px; display:none;">
+          <p>パスワードの登録が完了しました。</p>
+        </div>
+      </div>
+      <div>
+        <table class="table">
+          <th class="text-right">ユーザーID</th><td>01234567</td><th class="text-right">社員名</th><td>セボル　太郎</td>
+        </table>
+      </div>
+      <div class="modal-body input-group" style="width:300px; margin-left:25px;">
+        <span class="input-group-addon">パスワード</span><input style="width:150px;" type="text" class="form-control" placeholder="半角12文字以内">
+        <span class="input-group-addon">パスワード確認用</span><input style="width:150px;" type="text" class="form-control" placeholder="半角12文字以内">
+      </div>
+      <div class="modal-footer" style="margin-top:15px;">
+        <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+        <button type="button" class="btn btn-primary" onclick="Toggle('msg')">登録</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- フッター -->
+<div class="col-sm-10 col-md-offset-5" id="fotter"> &copy; 2012-<script>koshin();</script>
+  <a href="http://www.cevol.jp/index.html">CEVOL</a> All Rights Reserved.
+</div>
+<!-- ↑htmlはこちらへ↑ -->

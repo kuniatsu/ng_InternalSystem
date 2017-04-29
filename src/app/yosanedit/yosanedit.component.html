@@ -1,152 +1,148 @@
 
-<!--&lt;!&ndash; ↓htmlはこちらへ↓ &ndash;&gt;-->
-<!--&lt;!&ndash; 登録完了メッセージ &ndash;&gt;-->
-<!--<div id="msg_kanryou2" class="alert alert-info" role="alert" style="width:750px; display:none;"><p>申請コード【{0}】の申請登録が完了しました。</p>-->
-<!--</div>-->
-<!--&lt;!&ndash; 削除完了メッセージ &ndash;&gt;-->
-<!--<div id="msg_kanryou_sakujo" class="alert alert-info" role="alert" style="width:750px; display:none;"><p>申請コード【{0}】の削除が完了しました。</p>-->
-<!--</div>-->
+<!--予算申請新規登録-->
 
-<!--<div class="pull-left" id="shinsei_status">-->
-  <!--<table class="table table-bordered table-condensed"><tr><th class="status_cel1">申請状況</th></tr><tr class="text-center"><td><font color="red">未申請</font></td></tr></table>-->
-<!--</div>-->
-<!--<div class="pull-left" id="sign_tbl">-->
-  <!--<table class="table table-bordered table-condensed">-->
-    <!--<tr class="active text-center"><td class="sign_cel1">承　認</td><td class="sign_cel1">審　査</td><td class="sign_cel1">作　成</td></tr>-->
-    <!--<tr class="text-center"><td class="sign_cell2">&emsp;</td><td class="sign_cell2">&emsp;</td><td class="sign_cell2">セボル</td></tr>-->
-  <!--</table>-->
-<!--</div>-->
-<!--<div class="pull-left" id="signdate_tbl">-->
-  <!--<table class="table table-bordered table-condensed">-->
-    <!--<tr class="text-center"><td class="active sign_cel1">承認日</td><td class="signdate_cell">&emsp;</td></tr>-->
-    <!--<tr class="text-center"><td class="active sign_cel1">審査日</td><td class="signdate_cell">&emsp;</td></tr>-->
-  <!--</table>-->
-<!--</div>-->
-<!--<div class="clearfix"></div>-->
+<!-- ↓htmlはこちらへ↓ -->
+<!-- 登録完了メッセージ -->
+<div id="msg_kanryou2" class="alert alert-info" role="alert" style="width:750px; display:none;"><p>申請コード【】の申請登録が完了しました。</p>
+</div>
+<!-- 削除完了メッセージ -->
+<div id="msg_kanryou_sakujo" class="alert alert-info" role="alert" style="width:750px; display:none;"><p>申請コード【】の削除が完了しました。</p>
+</div>
 
-<!--<div class="col-sm-9">-->
-  <!--<table class="table table-bordered table-condensed">-->
-    <!--<tr><td class="active text-center" style="vertical-align:middle;">申請コード</td>-->
-      <!--<td><input type="text" class="form-control" placeholder="例）G1JNNN"></td>-->
-      <!--<td class="active text-center" style="vertical-align:middle;">申請日</td>-->
-      <!--<td><input type="text" placeholder="" class="form-control bsDate" id="usage1input3 #mydate"></td></tr>-->
-    <!--<tr><td class="active text-center" style="vertical-align:middle;">案件名</td>-->
-      <!--<td colspan="3"><input type="text" class="form-control" placeholder="全角40文字(半角80文字)以内"></td></tr>-->
-    <!--<tr><td class="active text-center" style="vertical-align:middle;">作業期間</td>-->
-      <!--<td style="width:200px;"><input type="text" placeholder="作業開始日" class="form-control bsDate" id="usage1input3 #mydate"></td>-->
-      <!--<td class="active text-center" style="vertical-align:middle;">～</td>-->
-      <!--<td style="width:200px;"><input type="text" placeholder="作業終了日" class="form-control bsDate" id="usage1input3 #mydate"></td></tr>-->
-    <!--<tr><td class="active text-center" style="vertical-align:middle;">検収日</td>-->
-      <!--<td colspan="3"><input type="text" class="form-control bsDate" id="#mydate usage1input3"></td></tr>-->
-    <!--<tr><td class="active text-center" style="vertical-align:middle;">予算</td>-->
-      <!--<td colspan="3"><input type="text" class="form-control" placeholder="&yen;0"></td></tr>-->
-  <!--</table>-->
+<div class="pull-left" id="shinsei_status">
+  <table class="table table-bordered table-condensed"><tr><th class="status_cel1">申請状況</th></tr><tr class="text-center"><td><font color="red">未申請</font></td></tr></table>
+</div>
+<div class="pull-left" id="sign_tbl">
+  <table class="table table-bordered table-condensed">
+    <tr class="active text-center"><td class="sign_cel1">承　認</td><td class="sign_cel1">審　査</td><td class="sign_cel1">作　成</td></tr>
+    <tr class="text-center"><td class="sign_cell2">&emsp;</td><td class="sign_cell2">&emsp;</td><td class="sign_cell2">セボル</td></tr>
+  </table>
+</div>
+<div class="pull-left" id="signdate_tbl">
+  <table class="table table-bordered table-condensed">
+    <tr class="text-center"><td class="active sign_cel1">承認日</td><td class="signdate_cell">&emsp;</td></tr>
+    <tr class="text-center"><td class="active sign_cel1">審査日</td><td class="signdate_cell">&emsp;</td></tr>
+  </table>
+</div>
+<div class="clearfix"></div>
 
-  <!--<table class="table table-bordered table-condensed">-->
-    <!--<tr><td class="active text-center" style="width:145px; vertical-align:middle;">旅費・交通費</td>-->
-      <!--<td><input type="text" class="form-control" placeholder="&yen;0"></td></tr>-->
-    <!--<tr><td class="active text-center" style="width:145px; vertical-align:middle;">残業経費</td>-->
-      <!--<td><input type="text" class="form-control" placeholder="&yen;0"></td></tr>-->
-    <!--<tr><td class="active text-center" style="width:145px; vertical-align:middle;">会議・交際費</td>-->
-      <!--<td><input type="text" class="form-control" placeholder="&yen;0"></td></tr>-->
-    <!--<tr><td class="active text-center" style="width:145px; vertical-align:middle;">他Gr費</td>-->
-      <!--<td><input type="text" class="form-control" placeholder="&yen;0"></td></tr>-->
-    <!--<tr><td class="active text-center" style="width:145px; vertical-align:middle;">外注費</td>-->
-      <!--<td><input type="text" class="form-control" placeholder="&yen;0"></td></tr>-->
-    <!--<tr><td class="active text-center" style="width:145px; vertical-align:middle;">作業員単価合計</td>-->
-      <!--<td>&emsp;&yen;0</td></tr>-->
-  <!--</table>-->
-  <!--<table class="table table-bordered table-condensed">-->
-    <!--<tr><td class="warning text-center" style="width:145px; vertical-align:middle;"><strong>収支予定</strong></td>-->
-      <!--<td><strong>&emsp;&yen;0</strong></td></tr>-->
-  <!--</table>-->
-  <!--<div id="worker_info" class="input-group">-->
-    <!--<h5><strong>―　作業者情報　―</strong></h5>-->
-    <!--<table class="table table-bordered table-condensed" id="tbl_worker_info">-->
-      <!--<tr class="active">-->
-        <!--<td class="text-center">作業員名</td>-->
-        <!--<td class="text-center">作業月</td>-->
-        <!--<td class="text-center">作業人工</td>-->
-      <!--</tr>-->
-      <!--<tr><td><select style="width:150px" class="form-control" id="usage1select3">-->
-        <!--<option>選択してください</option>-->
-        <!--<option>セボル　太郎</option>-->
-        <!--<option>セボル　次郎</option>-->
-        <!--<option>セボル　三郎</option>-->
-      <!--</select></td>-->
-        <!--<td><select style="width:150px" class="form-control" id="usage1select3">-->
-          <!--<option>選択してください</option>-->
-          <!--<option>2017年1月</option>-->
-          <!--<option>2017年2月</option>-->
-          <!--<option>2017年3月</option>-->
-          <!--<option>2017年4月</option>-->
-          <!--<option>2017年5月</option>-->
-          <!--<option>2017年6月</option>-->
-          <!--<option>2017年7月</option>-->
-          <!--<option>2017年8月</option>-->
-          <!--<option>2017年9月</option>-->
-          <!--<option>2017年10月</option>-->
-          <!--<option>2017年11月</option>-->
-          <!--<option>2017年12月</option>-->
-          <!--<option>2018年1月</option>-->
-          <!--<option>2018年2月</option>-->
-          <!--<option>2018年3月</option>-->
-          <!--<option>2018年4月</option>-->
-          <!--<option>2018年5月</option>-->
-          <!--<option>2018年6月</option>-->
-          <!--<option>2018年7月</option>-->
-          <!--<option>2018年8月</option>-->
-          <!--<option>2018年9月</option>-->
-          <!--<option>2018年10月</option>-->
-          <!--<option>2018年11月</option>-->
-          <!--<option>2018年12月</option>-->
-        <!--</select></td>-->
-        <!--<td style="width:80px;" ><input type="text" class="form-control" id="usage1input3" placeholder="例）0.5"></td>-->
-      <!--</tr>-->
-    <!--</table>-->
-    <!--<div id="btn_add_wk" class="pull-right">-->
-      <!--<button type="button" class="btn btn-success btn-xs" onclick="add_wkif();"><i class="glyphicon glyphicon-plus"></i>人工追加</button>-->
-      <!--<button type="button" class="btn btn-primary btn-xs" onclick="">人工確定</button>-->
-    <!--</div>-->
-  <!--</div>-->
-  <!--<div class="form-group" id="coment">-->
-    <!--<p class="control-label" for="InputTextarea"><strong>申請者コメント</strong></p>-->
-    <!--<textarea placeholder="コメントを入力してください。　※全角100文字(半角200文字)以内" rows="3" class="form-control" id="InputTextarea"></textarea>-->
+<div class="col-sm-9">
+  <table class="table table-bordered table-condensed">
+    <tr><td class="active text-center" style="vertical-align:middle;">申請コード</td>
+      <td><input type="text" class="form-control" placeholder="例）G1JNNN"></td>
+      <td class="active text-center" style="vertical-align:middle;">申請日</td>
+      <td><input type="text" placeholder="" class="form-control bsDate" ></td></tr>
+    <tr><td class="active text-center" style="vertical-align:middle;">案件名</td>
+      <td colspan="3"><input type="text" class="form-control" placeholder="全角40文字(半角80文字)以内"></td></tr>
+    <tr><td class="active text-center" style="vertical-align:middle;">作業期間</td>
+      <td style="width:200px;"><input type="text" placeholder="作業開始日" class="form-control bsDate" ></td>
+      <td class="active text-center" style="vertical-align:middle;">～</td>
+      <td style="width:200px;"><input type="text" placeholder="作業終了日" class="form-control bsDate" ></td></tr>
+    <tr><td class="active text-center" style="vertical-align:middle;">検収日</td>
+      <td colspan="3"><input type="text" class="form-control bsDate" id="#mydate usage1input3"></td></tr>
+    <tr><td class="active text-center" style="vertical-align:middle;">予算</td>
+      <td colspan="3"><input type="text" class="form-control" placeholder="&yen;0"></td></tr>
+  </table>
 
-    <!--&lt;!&ndash; アコーディオン表示　審査者・承認者コメント欄 &ndash;&gt;-->
-    <!--<div class="accordion">-->
-      <!--<div class="accordion-group">-->
-        <!--<div class="accordion-heading">-->
-          <!--<a data-toggle="collapse" data-parent="#accordion2" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne"></a>-->
-        <!--</div>-->
-        <!--<div id="collapseOne" class="accordion-body collapse">-->
-          <!--<div class="accordion-inner" id="exam_coment">-->
-            <!--<p class="control-label" for="InputTextarea"><strong>審査者コメント</strong></p>-->
-            <!--<textarea placeholder="審査者のコメントを表示" rows="3" class="form-control" id="InputTextarea" readonly></textarea>-->
-          <!--</div>-->
-          <!--<div class="accordion-inner">-->
-            <!--<p class="control-label" for="InputTextarea"><strong>承認者コメント</strong></p>-->
-            <!--<textarea placeholder="承認者のコメントを表示" rows="3" class="form-control" id="InputTextarea" readonly></textarea>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</div>-->
-  <!--<div class="pull-right">-->
-    <!--<button class="btn btn-success {{btsty}}" ng-style="btDisp"><i class="glyphicon glyphicon-print"></i> 電子ファイル出力</button>-->
-  <!--</div>-->
-<!--</div>-->
-<!--&lt;!&ndash; 画面下部ボタンエリア &ndash;&gt;-->
-<!--<div class="col-sm-10" style="margin-top:60px; margin-bottom:50px;">-->
-  <!--<a href="PCM002_main.html"><button type="button" class="btn btn-primary">メインメニュー画面へ</button></a>-->
-  <!--<a href="PCA003_budgetlist.html"><button type="button" class="btn btn-border btn-success">予算申請一覧画面へ</button></a>-->
-  <!--<a href="#"><button id="regist" type="button" class="btn btn-border btn-primary" onclick="kanryou_pca001();">上記内容を申請する</button></a>-->
-  <!--<a href="#"><button id="regi_delete" type="button" class="btn btn-border btn-danger" onclick="sakujo_pca001">上記申請を削除する</button></a>-->
-<!--</div>-->
-<!--</div>-->
-<!--&lt;!&ndash; フッター &ndash;&gt;-->
-<!--<div class="col-sm-8 col-md-offset-2" id="fotter"> &copy; 2012-<script>koshin();</script>-->
-  <!--<a href="http://www.cevol.jp/index.html">CEVOL</a> All Rights Reserved.-->
-<!--</div>-->
-<!--</div>-->
-<!--&lt;!&ndash; ↑htmlはこちらへ↑ &ndash;&gt;-->
+  <table class="table table-bordered table-condensed">
+    <tr><td class="active text-center" style="width:145px; vertical-align:middle;">旅費・交通費</td>
+      <td><input type="text" class="form-control" placeholder="&yen;0"></td></tr>
+    <tr><td class="active text-center" style="width:145px; vertical-align:middle;">残業経費</td>
+      <td><input type="text" class="form-control" placeholder="&yen;0"></td></tr>
+    <tr><td class="active text-center" style="width:145px; vertical-align:middle;">会議・交際費</td>
+      <td><input type="text" class="form-control" placeholder="&yen;0"></td></tr>
+    <tr><td class="active text-center" style="width:145px; vertical-align:middle;">他Gr費</td>
+      <td><input type="text" class="form-control" placeholder="&yen;0"></td></tr>
+    <tr><td class="active text-center" style="width:145px; vertical-align:middle;">外注費</td>
+      <td><input type="text" class="form-control" placeholder="&yen;0"></td></tr>
+    <tr><td class="active text-center" style="width:145px; vertical-align:middle;">作業員単価合計</td>
+      <td>&emsp;&yen;0</td></tr>
+  </table>
+  <table class="table table-bordered table-condensed">
+    <tr><td class="warning text-center" style="width:145px; vertical-align:middle;"><strong>収支予定</strong></td>
+      <td><strong>&emsp;&yen;0</strong></td></tr>
+  </table>
+  <div id="worker_info" class="input-group">
+    <h5><strong>―　作業者情報　―</strong></h5>
+    <table class="table table-bordered table-condensed" id="tbl_worker_info">
+      <tr class="active">
+        <td class="text-center">作業員名</td>
+        <td class="text-center">作業月</td>
+        <td class="text-center">作業人工</td>
+      </tr>
+      <tr><td><select style="width:150px" class="form-control" >
+        <option>選択してください</option>
+        <option>セボル　太郎</option>
+        <option>セボル　次郎</option>
+        <option>セボル　三郎</option>
+      </select></td>
+        <td><select style="width:150px" class="form-control" >
+          <option>選択してください</option>
+          <option>2017年1月</option>
+          <option>2017年2月</option>
+          <option>2017年3月</option>
+          <option>2017年4月</option>
+          <option>2017年5月</option>
+          <option>2017年6月</option>
+          <option>2017年7月</option>
+          <option>2017年8月</option>
+          <option>2017年9月</option>
+          <option>2017年10月</option>
+          <option>2017年11月</option>
+          <option>2017年12月</option>
+          <option>2018年1月</option>
+          <option>2018年2月</option>
+          <option>2018年3月</option>
+          <option>2018年4月</option>
+          <option>2018年5月</option>
+          <option>2018年6月</option>
+          <option>2018年7月</option>
+          <option>2018年8月</option>
+          <option>2018年9月</option>
+          <option>2018年10月</option>
+          <option>2018年11月</option>
+          <option>2018年12月</option>
+        </select></td>
+        <td style="width:80px;" ><input type="text" class="form-control" id="usage1input3" placeholder="例）0.5"></td>
+      </tr>
+    </table>
+    <div id="btn_add_wk" class="pull-right">
+      <button type="button" class="btn btn-success btn-xs" onclick="add_wkif();"><i class="glyphicon glyphicon-plus"></i>人工追加</button>
+      <button type="button" class="btn btn-primary btn-xs" onclick="">人工確定</button>
+    </div>
+  </div>
+  <div class="form-group" id="coment">
+    <p class="control-label" for="InputTextarea"><strong>申請者コメント</strong></p>
+    <textarea placeholder="コメントを入力してください。　※全角100文字(半角200文字)以内" rows="3" class="form-control" id="InputTextarea"></textarea>
+
+    <!-- アコーディオン表示　審査者・承認者コメント欄 -->
+    <div class="accordion">
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a data-toggle="collapse" data-parent="#accordion2" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne"></a>
+        </div>
+        <div id="collapseOne" class="accordion-body collapse">
+          <div class="accordion-inner" id="exam_coment">
+            <p class="control-label" for="InputTextarea"><strong>審査者コメント</strong></p>
+            <textarea placeholder="審査者のコメントを表示" rows="3" class="form-control" readonly></textarea>
+          </div>
+          <div class="accordion-inner">
+            <p class="control-label" for="InputTextarea"><strong>承認者コメント</strong></p>
+            <textarea placeholder="承認者のコメントを表示" rows="3" class="form-control" readonly></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pull-right">
+    <button class="btn btn-success" ng-style="btDisp"><i class="glyphicon glyphicon-print"></i> 電子ファイル出力</button>
+  </div>
+</div>
+<!-- 画面下部ボタンエリア -->
+<div class="col-sm-10" style="margin-top:60px; margin-bottom:50px;">
+  <a href="PCM002_main.html"><button type="button" class="btn btn-primary">メインメニュー画面へ</button></a>
+  <a href="PCA003_budgetlist.html"><button type="button" class="btn btn-border btn-success">予算申請一覧画面へ</button></a>
+  <a href="#"><button id="regist" type="button" class="btn btn-border btn-primary" onclick="kanryou_pca001();">上記内容を申請する</button></a>
+  <a href="#"><button id="regi_delete" type="button" class="btn btn-border btn-danger" onclick="sakujo_pca001">上記申請を削除する</button></a>
+</div>
+<!-- ↑htmlはこちらへ↑ -->

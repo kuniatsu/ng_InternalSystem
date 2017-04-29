@@ -1,3 +1,113 @@
-<p>
-  yosan-list works!
-</p>
+<!--予算申請一覧-->
+
+<!-- ↓htmlはこちらへ↓ -->
+<!-- フィルタ入力項目 -->
+<div id="filter_set" class="col-sm-9">
+  <table class="table table-bordered table-condensed input-sm">
+    <tr class="text-center info"><td colspan="7"><strong>フィルタ条件設定</strong></td></tr>
+    <tr class="text-center active"><td>申請コード</td><td>申請状況</td><td>作業開始年</td><td>作業開始月</td><td>作業終了年</td><td>作業終了月</td><td>赤字チェック</td></tr>
+    <tr><td style="width:100px;"><input type="text" class="form-control" id="usage2input3" placeholder="例）G1J234"></td>
+      <td style="width:160px;"><select class="form-control" ><option>設定してください</option>
+        <option>申請中</option>
+        <option>承認待ち</option>
+        <option>申請差し戻し</option>
+        <option>承認済</option>
+        <option>要再審査</option>
+        <option>案件作業中</option>
+        <option>作業完了</option>
+      </select>
+      </td>
+      <td style="width:120px;"><select class="form-control" ><option>--</option>
+        <option>2019年</option>
+        <option>2018年</option>
+        <option>2017年</option>
+        <option>2016年</option>
+        <option>2015年</option>
+      </select>
+      </td>
+      <td style="width:100px;"><select class="form-control" ><option>--</option>
+        <option>1月</option>
+        <option>2月</option>
+        <option>3月</option>
+        <option>4月</option>
+        <option>5月</option>
+        <option>6月</option>
+        <option>7月</option>
+        <option>8月</option>
+        <option>9月</option>
+        <option>10月</option>
+        <option>11月</option>
+        <option>12月</option>
+      </select>
+      </td>
+      <td style="width:120px;"><select class="form-control" ><option>--</option>
+        <option>2019年</option>
+        <option>2018年</option>
+        <option>2017年</option>
+        <option>2016年</option>
+        <option>2015年</option>
+      </select>
+      </td>
+      <td style="width:100px;"><select class="form-control" ><option>--</option>
+        <option>1月</option>
+        <option>2月</option>
+        <option>3月</option>
+        <option>4月</option>
+        <option>5月</option>
+        <option>6月</option>
+        <option>7月</option>
+        <option>8月</option>
+        <option>9月</option>
+        <option>10月</option>
+        <option>11月</option>
+        <option>12月</option>
+      </select>
+      </td>
+      <td class="text-center" style="vertical-align: middle; width:100px;"><input type="checkbox" class="input-group-addon"><font color="red" size="2.5em">&ensp;赤字表示</font></td>
+    </tr>
+  </table>
+  <div class="pull-right">
+    <button type="button" class="btn btn-success btn-sm">上記設定条件で絞る</button>
+  </div>
+</div>
+<div class="clearfix"></div>
+
+<!--　一覧表示 -->
+<div id="budget_list">
+  <table class="table table-bordered table-condensed">
+    <tr class="active input-sm"><td rowspan="2" style="width:80px" class="bg_title">申請コード</td>
+      <td rowspan="2" style="width:80px" class="bg_title">申請状況</td>
+      <td rowspan="2" style="width:150px" class="bg_title">案件名</td>
+      <td colspan="2" class="bg_title">作業期間</td>
+      <td colspan="3" class="success bg_title">申請金額</td>
+      <td colspan="3" class="warning bg_title">残額</td>
+    </tr>
+    <tr class="bg_title input-sm"><td class="active" style="width:80px">開始日</td>
+      <td class="active" style="width:80px">終了日</td>
+      <td class="success" style="width:80px">予算</td>
+      <td class="success" style="width:80px">旅費・交通費</td>
+      <td class="success" style="width:80px">残業費</td>
+      <td class="warning" style="width:80px">予算</td>
+      <td class="warning" style="width:80px">旅費・交通費</td>
+      <td class="warning" style="width:80px">残業費</td>
+    </tr>
+    <tr class="text-center"><td>G1J001</td><td>申請中</td><td>作業あいうえお</td><td>2017/4/1</td><td>2017/5/31</td><td>&yen;100</td><td>&yen;100</td><td>&yen;100</td><td>&yen;100</td><td>&yen;100</td><td>&yen;100</td><td style="width:80px;"><button type="button" class="btn btn-warning btn-sm">変更／削除</button></td><td style="width:80px;"><button type="button" class="btn btn-primary btn-sm">審査・承認</button></td></tr>
+    <tr class="text-center"><td>G1J002</td><td>案件作業中</td><td>作業かきくけこ</td><td>2017/3/1</td><td>2017/5/31</td><td>&yen;100</td><td>&yen;100</td><td>&yen;100</td><td><font color="red">&yen;-100</font></td><td>&yen;100</td><td>&yen;100</td><td style="width:80px;"><button type="button" class="btn btn-warning btn-sm">変更／削除</button></td><td style="width:80px;"><button type="button" class="btn btn-primary btn-sm">審査・承認</button></td></tr>
+    <tr class="text-center"><td>G2J001</td><td>承認待ち</td><td>作業さしすせそ</td><td>2017/5/1</td><td>2017/6/1</td><td>&yen;100</td><td>&yen;100</td><td>&yen;100</td><td>&yen;100</td><td>&yen;100</td><td>&yen;100</td><td style="width:80px;"><button type="button" class="btn btn-warning btn-sm">変更／削除</button></td><td style="width:80px;"><button type="button" class="btn btn-primary btn-sm">審査・承認</button></td></tr>
+    <tr class="text-center"><td>G3J001</td><td>申請差し戻し</td><td>作業たちつてと</td><td>2017/6/1</td><td>2017/7/31</td><td>&yen;100</td><td>&yen;100</td><td>&yen;100</td><td>&yen;100</td><td>&yen;100</td><td>&yen;100</td><td style="width:80px;"><button type="button" class="btn btn-warning btn-sm">変更／削除</button></td><td style="width:80px;"><button type="button" class="btn btn-primary btn-sm">審査・承認</button></td></tr>
+    <tr class="text-center"><td>G3J002</td><td>承認済</td><td>作業2　ABCDE</td><td>2017/5/1</td><td>2017/7/31</td><td>&yen;1,000</td><td>&yen;300</td><td>&yen;300</td><td>&yen;1,000</td><td>&yen;300</td><td>&yen;300</td><td style="width:80px;"><button type="button" class="btn btn-warning btn-sm">変更／削除</button></td><td style="width:80px;"><button type="button" class="btn btn-primary btn-sm">審査・承認</button></td></tr>
+    <tr class="text-center"><td>G4J001</td><td>案件作業中</td><td>派遣作業A　１２３４</td><td>2017/4/1</td><td>2017/7/31</td><td>&yen;500</td><td>&yen;100</td><td>&yen;100</td><td>&yen;200</td><td>&yen;0</td><td><font color="red">&yen;-50</font></td><td style="width:80px;"><button type="button" class="btn btn-warning btn-sm">変更／削除</button></td><td style="width:80px;"><button type="button" class="btn btn-primary btn-sm">審査・承認</button></td></tr>
+  </table>
+</div>
+
+<!-- 画面下部ボタンエリア -->
+<div style="margin-top:40px;">
+  <a href="PCM002_main.html"><button type="button" class="btn btn-primary">メインメニュー画面へ</button></a>
+  <a href="PCA001_budgetApplication.html"><button type="button" class="btn btn-border btn-success">予算申請新規登録画面へ</button></a>
+</div>
+
+<!-- フッター -->
+<div class="col-sm-10 col-md-offset-5" id="fotter"> &copy; 2012-<script>koshin();</script>
+  <a href="http://www.cevol.jp/index.html">CEVOL</a> All Rights Reserved.
+</div>
+<!-- ↑htmlはこちらへ↑ -->

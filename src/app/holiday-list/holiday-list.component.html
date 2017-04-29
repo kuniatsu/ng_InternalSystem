@@ -1,3 +1,168 @@
-<p>
-  holiday-list works!
-</p>
+<!--有休有休申請申請-->
+
+<!-- ↓htmlはこちらへ↓ -->
+<div id="Period" class="pull-left">
+  <table class="table table-bordered table-condensed">
+    <tr class="active"><th class="text-center" colspan="3">有休対象期間</th></tr>
+    <tr><td>2016年7月1日</td><td class="active">～</td><td>2017年6月30日</td></tr>
+  </table>
+</div>
+<div id="Remaining_days" class="pull-right">
+  <table class="table table-bordered table-condensed">
+    <tr class="text-center"><td class="danger">休暇日数</td><td class="ycell_size">40</td><td class="danger">残日数</td><td class="ycell_size">40</td></tr>
+    <tr class="text-center"><td class="warning">前年度付与日数</td><td class="ycell_size">20</td><td class="warning">前年度分残日数</td><td class="ycell_size">20</td></tr>
+    <tr class="text-center"><td class="success">当年度付与日数</td><td class="ycell_size">20</td><td class="success">当年度分残日数</td><td class="ycell_size">20</td></tr>
+  </table>
+</div>
+<div class="clearfix"></div>
+
+<!-- 登録完了メッセージ -->
+<div id="msg_kanryou3" class="alert alert-info" role="alert" style="width:650px; display:none;"><p>有休取得申請を完了しました。</p>
+</div>
+
+<div class="form-group">
+  <table class="table table-bordered table-condensed">
+    <tr><td class="active text-center" style="vertical-align:middle; width:90px;">取得予定日</td><td style="width:150px;"><input type="text" class="form-control bsDate" id="#mydate"></td>
+      <td class="active text-center" style="vertical-align:middle; width:100px;">取得予定事由</td><td><input type="text" class="form-control" placeholder="例）私用"></td>
+    </tr>
+    <tr><td class="active text-center" style="vertical-align:middle; width:100px;">消化予定日数</td>
+      <td><select class="form-control">
+        <option>未選択</option>
+        <option>0.5</option>
+        <option>1</option>
+      </select>
+      </td>
+      <td class="active text-center" style="vertical-align:middle; width:100px;">半休取得時</td>
+      <td><select class="form-control">
+        <option>未選択</option>
+        <option>AM半休</option>
+        <option>PM半休</option>
+      </select>
+      </td>
+    </tr>
+    <tr><td class="active text-center" style="vertical-align:middle; width:90px;"><strong>取得日</strong></td><td style="width:150px;"><input type="text" class="form-control bsDate" id="#mydate"></td>
+      <td class="active text-center" style="vertical-align:middle; width:100px;"><strong>取得事由</strong></td><td><input type="text" class="form-control" placeholder="例）体調不良"></td>
+    </tr>
+    <tr><td class="active text-center" style="vertical-align:middle; width:100px;"><strong>消化日数</strong></td>
+      <td><select class="form-control" >
+        <option>未選択</option>
+        <option>0.5</option>
+        <option>1</option>
+      </select>
+      </td>
+      <td class="active text-center" style="vertical-align:middle; width:100px;"><strong>半休取得時</strong></td>
+      <td><select class="form-control" >
+        <option>未選択</option>
+        <option>AM半休</option>
+        <option>PM半休</option>
+      </select>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="clearfix"></div>
+<div class="pull-right">
+  <a href="#"><button type="button" class="btn btn-primary" id="regist_holiday" onclick="kanryou_pcc004();">上記内容で申請する</button></a>
+</div>
+<div class="clearfix"></div>
+
+<div style="margin-top:20px;">
+  <div class="panel panel-warning">
+    <div class="panel-heading">
+      注意事項
+    </div>
+    <div class="panel-body">
+      <li class="cmt1">事前の有休取得申請時には、細字項目≪取得予定日・取得予定事由・取得予定日数・半休取得時≫のみ入力して申請してください。</li>
+      <li class="cmt1">当日急遽有休を取得する場合は、太字項目<strong>≪取得日・取得事由・取得日数・半休取得時≫</strong>のみ入力して申請してください。</li>
+      <li class="cmt1">有休取得後の実績を入力する場合、申請済の有休予定を変更・削除したい場合は、【有休取得状況一覧】より操作してください。</li>
+    </div>
+  </div>
+</div>
+<div class="clearfix"></div>
+
+<!-- アコーディオン表示　有休取得一覧 -->
+<div id="yuukyu_ichiran" style="width:810px;">
+  <a data-toggle="collapse"  href="#sample" aria-expanded="false" aria-controls="sample"></a>
+  <div id="sample" class="collapse">
+    <div class="panel panel-default">
+      <div class="panel-body form-group form-group-sm">
+        <table class="table table-bordered table-condensed input-sm">
+          <tr class="text-center">
+            <td class="active" style="width:30px;">選択</td>
+            <td class="active" style="width:60px;">前/当</td>
+            <td class="active" style="width:90px;">取得予定日</td>
+            <td class="info" style="width:90px;">取得日</td>
+            <td class="active" style="width:110px;">取得予定事由</td>
+            <td class="info" style="width:110px;">取得事由</td>
+            <td class="active" style="width:85px;">消化予定日数</td>
+            <td class="info" style="width:60px;">消化日数</td>
+            <td class="active" style="width:60px;">承認状況</td>
+          </tr>
+          <tr class="text-center"><td><input type="checkbox" value="" disabled></td>
+            <td>前年度</td>
+            <td><input name="ck00" type="text" class="form-control" value="2017/04/01" readonly="readonly" style="width:90px; text-align:center;"></td>
+            <td><input name="ck00" type="text" class="form-control" value="2017/04/01" readonly="readonly" style="width:90px; text-align:center;"></td>
+            <td><input name="ck00" type="text" class="form-control" value="私用のため" readonly="readonly" style="width:110px; text-align:center;"></td>
+            <td><input name="ck00" type="text" class="form-control" value="私用のため" readonly="readonly" style="width:110px; text-align:center;"></td>
+            <td><input name="ck00" type="text" class="form-control" value="1" readonly="readonly" style="width:80px; text-align:center;"></td>
+            <td><input name="ck00" type="text" class="form-control" value="1" readonly="readonly" style="width:80px; text-align:center;"></td>
+            <td>承認済</td>
+          </tr>
+          <tr class="text-center"><td><input type="checkbox" value="" disabled></td><td>前年度</td>
+            <td><input name="ck00" type="text" class="form-control" value="--" readonly="readonly" style="width:90px; text-align:center;"></td>
+            <td><input name="ck00" type="text" class="form-control" value="2017/04/07" readonly="readonly" style="width:90px; text-align:center;"></td>
+            <td><input name="ck00" type="text" class="form-control" value="--" readonly="readonly" style="width:110px; text-align:center;"></td>
+            <td><input name="ck00" type="text" class="form-control" value="体調不良" readonly="readonly" style="width:110px; text-align:center;"></td>
+            <td><input name="ck00" type="text" class="form-control" value="--" readonly="readonly" style="width:80px; text-align:center;"></td>
+            <td><input name="ck00" type="text" class="form-control" value="0.5&nbsp;[PM半]" readonly="readonly" style="width:80px; text-align:center;"></td>
+            <td>承認済</td>
+          </tr>
+          <tr class="text-center"><td><input type="checkbox" name="chk_on" value="" onclick="connecttext('ck1',this.checked);"></td>
+            <td>前年度</td>
+            <td><input id="ck1" name="ck1" type="text" class="form-control bsDate" value="2017/5/1" readonly="readonly" style="width:90px; text-align:center;"></td>
+            <td><input name="ck1" type="text" class="form-control bsDate" value="--" readonly="readonly" style="width:90px; text-align:center;"></td>
+            <td><input name="ck1" type="text" class="form-control" value="年休取得推奨日" readonly="readonly" style="width:110px; text-align:center;"></td>
+            <td><input name="ck1" type="text" class="form-control" value="--" readonly="readonly" style="width:110px; text-align:center;"></td>
+            <td><input name="ck1" type="text" class="form-control" value="1" readonly="readonly" style="width:80px; text-align:center;"></td>
+            <td><input name="ck1" type="text" class="form-control" value="--" readonly="readonly" style="width:80px; text-align:center;"></td>
+            <td>承認済</td>
+          </tr>
+          <tr class="text-center"><td><input type="checkbox" name="chk_on" id="chk_on" value="" onclick="connecttext('ck2',this.checked);"></td>
+            <td>前年度</td>
+            <td><input name="ck2" type="text" class="form-control bsDate" value="2017/5/19" readonly="readonly" style="width:90px; text-align:center;"></td>
+            <td><input name="ck2" type="text" class="form-control bsDate" value="--" readonly="readonly" style="width:90px; text-align:center;"></td>
+            <td><input name="ck2" type="text" class="form-control" value="通院のため" readonly="readonly" style="width:110px; text-align:center;"></td>
+            <td><input name="ck2" type="text" class="form-control" value="--" readonly="readonly" style="width:110px; text-align:center;"></td>
+            <td><input name="ck2" type="text" class="form-control" value="0.5 [AM半]" readonly="readonly" style="width:80px; text-align:center;"></td>
+            <td><input name="ck2" type="text" class="form-control" value="--" readonly="readonly" style="width:80px; text-align:center;"></td>
+            <td><font color="red">未承認</font></td>
+          </tr>
+        </table>
+        <div class="panel panel-success">
+          <div class="panel-heading">
+            各種操作について
+          </div>
+          <div class="panel-body">
+            <li class="cmt1">有休取得後に≪取得日・取得事由・消化日数≫を入力する際は、該当のチェックボックスを選択後に取得実績を入力し、【上記内容に変更する】ボタンを押下してください。</li>
+            <li class="cmt1">申請済の有休取得予定を変更する場合は、該当のチェックボックスを選択してから変更内容を入力し、【上記内容に変更する】ボタンを押下してください。</li>
+            <li class="cmt1">申請済の有休取得予定を削除する場合は、該当のチェックボックスを選択後、【選択済項目を削除】ボタンを押下してください。</li>
+          </div>
+        </div>
+        <div class="pull-right">
+          <button type="button" class="btn btn-warning btn-sm">上記内容に変更する</button>
+          <button type="button" class="btn btn-danger btn-sm">選択済項目を削除</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top:50px;">
+  <a href="PCM002_main.html"><button type="button" class="btn btn-primary">メインメニュー画面へ</button></a>
+  <a href="PCC002_dayReport_newmodal.html"><button type="button" class="btn btn-danger">勤怠一覧画面に戻る</button></a>
+</div>
+<!-- フッター -->
+<div class="col-sm-8 col-md-offset-2" id="fotter"> &copy; 2012-<script>koshin();</script>
+  <a href="http://www.cevol.jp/index.html">CEVOL</a> All Rights Reserved.
+</div>
+<!-- ↑htmlはこちらへ↑ -->

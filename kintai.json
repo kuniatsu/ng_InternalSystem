@@ -1,35 +1,26 @@
 {
-  "a":{
-    "date": "2017/1/1",
-    "title": "実績",
-    "value": "0"
+  "a": {
+    "id": 991,
+    "title": "All Day Event",
+    "url": "",
+    "start": "2017-04-01",
+    "end": "",
+    "value":"123"
   },
   "b":{
-    "date": "2017/1/2",
-    "title": "実績",
-    "value": "0"
+    "id": 992,
+    "title": "Long Event",
+    "url": "",
+    "start": "2017-04-07",
+    "end": "2017-04-10",
+    "value":"345"
   },
   "c":{
-    "date": "2017/1/3",
-    "title": "実績",
-    "value": "0"
-  },
-  "d":{
-    "date": "2017/1/4",
-    "title": "実績",
-    "value": "0"
-  },
-  "e":{
-    "date": "2017/1/5",
-    "title": "有休",
-    "value": "0"
-  },
-  "f":{
-    "date": "2017/1/6",
-    "title": "有休",
-    "value": "0"
+    "id": 993,
+    "title": "Repeating Event",
+    "url": "",
+    "start": "2017-04-09T16:00:00",
+    "end": "",
+    "value":"456"
   }
 }
-
-
-
