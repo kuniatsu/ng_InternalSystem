@@ -70,6 +70,15 @@ import { HolidayListComponent } from './holiday-list/holiday-list.component';
       },{
         path:'SystemInfoComponent',
         component:SystemInfoComponent,
+      },{
+        path:'YosanCheckComponent',
+        component:YosanCheckComponent,
+      },{
+        path:'YosanListComponent',
+        component:YosanListComponent,
+      },{
+        path:'YosaneditComponent',
+        component:YosaneditComponent,
       }
 
 

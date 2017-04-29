@@ -1,5 +1,9 @@
 <a routerLink=""><div class="panel panel-primary mainPageList" id="child2" (click)="openCloseContent(0)"><h1>予算</h1></div></a>
-<span *ngIf="yosanFlg"></span>
+<span *ngIf="yosanFlg">
+      <a routerLink="YosanCheckComponent"><div class="panel panel-primary mainPageList"><h1>予算申請承認</h1></div></a>
+      <a routerLink="YosanListComponent"><div class="panel panel-primary mainPageList"><h1>予算申請一覧</h1></div></a>
+      <a routerLink="YosaneditComponent"><div class="panel panel-primary mainPageList"><h1>予算申請新規登録</h1></div></a>
+</span>
 
 
 <div class="panel panel-primary mainPageList" id="child3" (click)="openCloseContent(1)"><h1>勤怠</h1></div>
@@ -16,5 +20,6 @@
     <a routerLink="HolidayComponent"><div class="panel panel-primary mainPageList"><h1>特休公休設定画面</h1></div></a>
     <a routerLink="HolidayListComponent"><div class="panel panel-primary mainPageList"><h1>有休申請</h1></div></a>
     <a routerLink="SystemInfoComponent"><div class="panel panel-primary mainPageList"><h1>システム管理画面</h1></div></a>
+
 </span>
 
