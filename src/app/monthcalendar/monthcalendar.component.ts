@@ -17,7 +17,6 @@ export class MonthcalendarComponent implements OnInit {
 
   constructor(private http: Http,public router: Router) {
     this.options = new DatePickerOptions();
-    console.log("constractor");
   }
 
   tabFlg1=false;
@@ -41,6 +40,8 @@ export class MonthcalendarComponent implements OnInit {
       eventLimit: true, // allow "more" link when too many events
       events: this.kinmudataArray
     };
+    console.log("this.calendarOptions");
+    console.dir(this.calendarOptions);
   }
 
 
@@ -53,14 +54,22 @@ export class MonthcalendarComponent implements OnInit {
       url: "./kintai.json"
     })).subscribe((res: Response) => {
       var jsonObj = res.json();
+      // console.log("jsonDoc");
       for(var key in jsonObj){
         var jsonDoc = jsonObj[key];
+        // console.dir(jsonDoc);
         this.kinmudataArray.push(jsonDoc);
         returnArray.push(jsonDoc);
       }
       return returnArray;
     });
   }
+
+
+
+
+
+
 
 
   @ViewChild(YosanmodalComponent)

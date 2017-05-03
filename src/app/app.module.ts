@@ -80,10 +80,6 @@ import { HolidayListComponent } from './holiday-list/holiday-list.component';
         path:'YosaneditComponent',
         component:YosaneditComponent,
       }
-
-
-
-
     ])
 
   ],
