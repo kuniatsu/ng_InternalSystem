@@ -13,11 +13,6 @@ export class AppComponent {
 
 
 
-  // @Input() mainComponent:MainComponent;
-
-
-
-
   //アクセス履歴
   s = localStorage;
   setData(){

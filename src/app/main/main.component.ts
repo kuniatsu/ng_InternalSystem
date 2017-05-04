@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, EventEmitter, Output} from '@angular/core';
 import {RouterLink} from "@angular/router";
 
 @Component({
@@ -12,9 +12,16 @@ export class MainComponent implements OnInit {
   yosanFlg = false;
   systemFlg = false;
 
-  constructor() { }
-  ngOnInit() {
+  pageNum = 0;
+
+  constructor(){ }
+  ngOnInit(){}
+
+  actionClick(num:number){
+    this.pageNum = num;
+    console.log(num+"がclickされた");
   }
+
   changePage(event,num:number) {
     if (num == 1) {} else {}
   }
