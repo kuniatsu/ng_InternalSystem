@@ -2,7 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {YosanmodalComponent} from "../yosanmodal/yosanmodal.component";
 import { DateModel, DatePickerOptions } from '../ng2-datepicker/ng2-datepicker.component';
 import {Kinmudata} from "./yosan.kinmudata";
-import {Request, Response, Http, Headers, RequestOptions, RequestOptionsArgs} from "@angular/http";
+import {Request, Response, Http, Headers, RequestOptions, RequestOptionsArgs, URLSearchParams} from "@angular/http";
 import {CalendarComponent} from "ap-angular2-fullcalendar";
 import {Router} from '@angular/router';
 
@@ -50,8 +50,12 @@ export class YosanComponent implements OnInit {
   //json読み取り
   updateStatus() {
     console.log("updateStatus");
+
     let headers = new Headers({ 'Content-Type': 'application/json' });
-    let options = new RequestOptions({ headers: headers,body:this.dateData});//jsonの値をつける
+    let params = new URLSearchParams();
+    params.set('start', '2016');
+    params.set('end', '2017');
+    let options = new RequestOptions({ headers: headers, search: params});
 
     //get送信
     this.http.request(new Request({
@@ -67,6 +71,8 @@ export class YosanComponent implements OnInit {
       alert(error);
     });
 
+
+
     //get値送信test
     this.http.request(new Request({
       method: "Get",
@@ -76,6 +82,7 @@ export class YosanComponent implements OnInit {
       console.dir(res);
     },error => {
       console.log(error);
+      console.dir(error);
     });
 
 
