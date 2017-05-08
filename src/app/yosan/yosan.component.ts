@@ -57,6 +57,8 @@ export class YosanComponent implements OnInit {
     params.set('end', '2017');
     let options = new RequestOptions({ headers: headers, search: params});
 
+
+
     //get送信
     this.http.request(new Request({
       method: "Get",
@@ -72,16 +74,12 @@ export class YosanComponent implements OnInit {
     });
 
 
-
-    //get値送信test
-    this.http.request(new Request({
-      method: "Get",
-      url: "./ajax.php"
-    }),options).subscribe((res: Response) => {
+    this.http.get("./ajax.php", options)
+    .subscribe((res: Response) => {
       console.log("success");
       console.dir(res);
     },error => {
-      console.log(error);
+      console.log("error");
       console.dir(error);
     });
 

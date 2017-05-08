@@ -16,7 +16,7 @@ export class AppComponent {
   //アクセス履歴
   s = localStorage;
   setData(){
-    var a = this.s.getItem("save")
+    var a = this.s.getItem("save");
     this.s.setItem("save",a+":a");
   }
   getData(){

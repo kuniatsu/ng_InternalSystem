@@ -20,6 +20,7 @@ import { HolidayComponent } from './holiday/holiday.component';
 import { SystemInfoComponent } from './system-info/system-info.component';
 import { GroupEditComponent } from './group-edit/group-edit.component';
 import { HolidayListComponent } from './holiday-list/holiday-list.component';
+import { HistorymenuComponent } from './historymenu/historymenu.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { HolidayListComponent } from './holiday-list/holiday-list.component';
     HolidayComponent,
     SystemInfoComponent,
     GroupEditComponent,
-    HolidayListComponent
+    HolidayListComponent,
+    HistorymenuComponent
   ],
   imports: [
     BrowserModule,
