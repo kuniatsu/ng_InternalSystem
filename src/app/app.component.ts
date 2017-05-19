@@ -1,4 +1,4 @@
-import {Component, ViewChild, Input} from '@angular/core';
+import {Component, ViewChild, Input, OnInit, OnChanges} from '@angular/core';
 import {YosanmodalComponent} from "./yosanmodal/yosanmodal.component";
 import {MainComponent} from "./main/main.component";
 
@@ -7,11 +7,13 @@ import {MainComponent} from "./main/main.component";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnChanges  {// implements ngOnChanges
   title = 'app works!';
   value = 1;
 
-
+  ngOnChanges(){
+    console.log("changechange ngOnchanges");
+  }
 
   //アクセス履歴
   s = localStorage;

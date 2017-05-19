@@ -1,3 +1,19 @@
-<p>
-  historymenu works!
-</p>
+<div id="sidebar_menu" class="panel panel-primary">
+  <div class="panel-heading">
+    <i class="glyphicon glyphicon-time"></i> アクセス履歴
+  </div>
+  <ul>
+    <li *ngFor="let str of strArray">{{str}}</li>
+
+    <li (click)="changePage($event,2)">勤怠</li>
+    <li (click)="changePage($event,3)">共通</li>
+  </ul>
+</div>
+
+
+<hr />
+<button (click)="setData('123')">button_set</button>
+<button (click)="getData()">button_get</button>
+<button (click)="clearData()">button_clear</button>
+
+

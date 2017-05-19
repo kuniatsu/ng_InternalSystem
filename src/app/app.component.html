@@ -29,7 +29,14 @@
               <li (click)="changePage($event,3)">共通</li>
             </ul>
           </div>
+
+          <app-historymenu *ngIf="disp"></app-historymenu>
+          <app-historymenu *ngIf="!disp"></app-historymenu>
+
+
+
         </div>
+
 
         <div class="mainBox col-sm-9 col-xs-12" [ngSwitch]="value">
 
@@ -46,9 +53,9 @@
 <!--デバッグ-->
 <!--<app-yosanedit></app-yosanedit>-->
 
-<button (click)="setData()">button_set</button>
-<button (click)="getData()">button_get</button>
-<button (click)="clearData()">button_clear</button>
+<!--<button (click)="setData()">button_set</button>-->
+<!--<button (click)="getData()">button_get</button>-->
+<!--<button (click)="clearData()">button_clear</button>-->
 
 
 

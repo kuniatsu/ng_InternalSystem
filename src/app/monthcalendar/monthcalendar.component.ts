@@ -16,6 +16,7 @@ export class MonthcalendarComponent implements OnInit {
 
 
   constructor(private http: Http,public router: Router) {
+    localStorage.setItem("history",localStorage.getItem("history")+",monthcalendar");
     this.options = new DatePickerOptions();
   }
 

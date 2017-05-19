@@ -1,5 +1,6 @@
 import {Component, OnInit, EventEmitter, Output} from '@angular/core';
 import {RouterLink} from "@angular/router";
+import {HistorymenuComponent} from "../historymenu/historymenu.component";
 
 @Component({
   selector: 'app-main',
@@ -14,12 +15,15 @@ export class MainComponent implements OnInit {
 
   pageNum = 0;
 
-  constructor(){ }
+  constructor(){
+    localStorage.setItem("history",localStorage.getItem("history")+",main");
+  }
   ngOnInit(){}
 
-  actionClick(num:number){
-    this.pageNum = num;
-    console.log(num+"がclickされた");
+  actionClick(page:string){
+    // console.log(num+"がclickされた");
+    // localStorage.setItem("history",localStorage.getItem("history")+","+page);
+    // alert(localStorage.getItem("save"));
   }
 
   changePage(event,num:number) {
