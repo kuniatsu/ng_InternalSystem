@@ -3,17 +3,16 @@
     <i class="glyphicon glyphicon-time"></i> アクセス履歴
   </div>
   <ul>
-    <li *ngFor="let str of strArray">{{str}}</li>
-
-    <li (click)="changePage($event,2)">勤怠</li>
-    <li (click)="changePage($event,3)">共通</li>
+    <!--<li *ngFor="let str of strArray"><a routerLink="{{str}}">{{str}}</a></li>-->
+    <li *ngFor="let obj of objArray"><a routerLink="{{obj.url}}">{{obj.str}}</a></li>
   </ul>
 </div>
 
 
-<hr />
-<button (click)="setData('123')">button_set</button>
-<button (click)="getData()">button_get</button>
-<button (click)="clearData()">button_clear</button>
+<!--<hr />-->
+<!--<button (click)="setData('123')">button_set</button>-->
+<!--<button (click)="getData()">button_get</button>-->
+<!--<button (click)="clearData()">button_clear</button>-->
+<!--<button (click)="onClick()">oncli</button>-->
 
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Subject} from "rxjs";
+import {HistoryServiceService} from "./history-service.service";
 
 @Component({
   selector: 'app-historymenu',
@@ -7,35 +8,37 @@ import {Subject} from "rxjs";
   styleUrls: ['./historymenu.component.css']
 })
 export class HistorymenuComponent implements OnInit {
-  private strArray:string[] = ["予算","予算"];
-  public static linkArray:string[];
+  private objArray:any = [];
 
-  private disp:boolean;
-  constructor() {
-    this.disp = true;
-    console.log("historymenu:constructor");
+  constructor(
+    private _historyServiceService: HistoryServiceService
+  ) {
+    this.dispHistry();
   }
-
-
-  //スタフロ
-  // Observable string sources
-  private emitChangeSource = new Subject<any>();
-  // Observable string streams
-  changeEmitted$ = this.emitChangeSource.asObservable();
-  // Service message commands
-  emitChange(change: any) {
-    this.emitChangeSource.next(change);
-  }
-  //スタフロ
-
-
-
-
-
   ngOnInit() {}
-  changeDisp(){
-    this.disp = !this.disp;
+
+  dispHistry(){
+    var his = localStorage.getItem("history");
+    if(his.indexOf(',')!==-1) {//,を含んでいること
+      his.split(',').reverse().forEach((hisc,i) => {
+        if(i>10){return;}
+        var name = hisc.split(':');
+        if (this.objArray.indexOf(name) === -1) {
+          this.objArray.push({str: name[0], url: name[1]});
+        }
+      });
+    }
   }
+
+
+
+  onClick(){
+    this._historyServiceService.emitChange('Data from child');
+  }
+
+
+
+  changeDisp(){}
   //アクセス履歴
   setData(pName){
     localStorage.setItem("history",localStorage.getItem("history")+","+pName);

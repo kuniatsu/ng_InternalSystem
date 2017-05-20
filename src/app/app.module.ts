@@ -21,6 +21,7 @@ import { SystemInfoComponent } from './system-info/system-info.component';
 import { GroupEditComponent } from './group-edit/group-edit.component';
 import { HolidayListComponent } from './holiday-list/holiday-list.component';
 import { HistorymenuComponent } from './historymenu/historymenu.component';
+import {HistoryServiceService} from "./historymenu/history-service.service";
 
 
 @NgModule({
@@ -52,8 +53,12 @@ import { HistorymenuComponent } from './historymenu/historymenu.component';
         path:'',
         component:MainComponent
       },{
+        path:'main',
+        component:MainComponent
+      },{
         path:'yosan',
         component:YosanComponent
+
       },{
         path:'monthcalendar',
         component:MonthcalendarComponent,
@@ -83,9 +88,8 @@ import { HistorymenuComponent } from './historymenu/historymenu.component';
         component:YosaneditComponent,
       }
     ])
-
   ],
-  providers: [],
+  providers: [HistoryServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
