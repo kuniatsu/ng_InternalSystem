@@ -17,15 +17,10 @@ export class AppComponent implements OnChanges  {
     _historyServiceService.changeEmitted$.subscribe(
       text => {
         //historyServiceのイベント定義
-        console.log("appcomponent:"+text);
+        // console.log("appcomponent:"+text);
         this.menudisp = !this.menudisp;
       });
   }
-
-  onc(){
-    this.menudisp = !this.menudisp;
-  }
-
 
   ngOnChanges(){
     console.log("changechange ngOnchanges");

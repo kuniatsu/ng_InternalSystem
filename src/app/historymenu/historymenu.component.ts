@@ -19,15 +19,17 @@ export class HistorymenuComponent implements OnInit {
 
   dispHistry(){
     var his = localStorage.getItem("history");
+    if(his==null){return;}
     if(his.indexOf(',')!==-1) {//,を含んでいること
       his.split(',').reverse().forEach((hisc,i) => {
-        if(i>10){return;}
-        var name = hisc.split(':');
-        if (this.objArray.indexOf(name) === -1) {
-          this.objArray.push({str: name[0], url: name[1]});
+        if(i>=10){return;}
+        var history = hisc.split(':');
+        if (history[0]!=="null") {
+            this.objArray.push({str: history[0], url: history[1]});
         }
       });
     }
+
   }
 
 

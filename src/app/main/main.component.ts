@@ -19,7 +19,7 @@ export class MainComponent implements OnInit {
   constructor(
     private _historyServiceService: HistoryServiceService
   ){
-    localStorage.setItem("history",localStorage.getItem("history")+",メイン画面:");
+    // localStorage.setItem("history",localStorage.getItem("history")+",メイン画面:");
   }
   ngOnInit(){}
 
