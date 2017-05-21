@@ -66,6 +66,39 @@ export class YosanListComponent implements OnInit {
       alert(error);
     });
 
+
+
   }
+
+
+  serch(){
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let params = new URLSearchParams();
+    params.set('start', 'a');
+    params.set('code', 'b');
+    params.set('status', 'c');
+    params.set('name', 'd');
+    params.set('start', 'e');
+    params.set('end', 'f');
+    params.set('value', 'g');
+    params.set('koutsuuhi', 'h');
+    params.set('zangyou', 'i');
+    params.set('value_nokori', 'j');
+    params.set('koutsuuhi_nokori', 'k');
+    params.set('zangyou_nokori', 'l');
+
+    let options = new RequestOptions({ headers: headers, search: params});
+
+    this.http.get("./ajax.php", options)
+      .subscribe((res: Response) => {
+        console.log("success");
+        console.dir(res);
+      },error => {
+        console.log("error");
+        console.dir(error);
+      });
+
+  }
+
 
 }
